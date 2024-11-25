@@ -1,0 +1,1 @@
+aqui hay varias funciones relacionadas con la conectividad a la base de datos
