@@ -351,4 +351,6 @@ CMakeFiles/GC.dir/main.cpp.obj: \
  C:/PROGRA~1/POSTGR~1/14/include/pg_config_ext.h \
  C:\Users\HP\ i5-7\Documents\Pedro\ProyectoConvalidacionBasedeDatos\gestion-cujae(GC)\gc-functions/gc.h \
  C:\Users\HP\ i5-7\Documents\Pedro\ProyectoConvalidacionBasedeDatos\gestion-cujae(GC)\menu-users/menu.h \
+ C:\Users\HP\ i5-7\Documents\Pedro\ProyectoConvalidacionBasedeDatos\gestion-cujae(GC)\menu-users/usr.h \
+ C:/Users/HP\ i5-7/Documents/Pedro/ProyectoConvalidacionBasedeDatos/gestion-cujae(GC)/gc-functions/gc.h \
  C:\Users\HP\ i5-7\Documents\Pedro\ProyectoConvalidacionBasedeDatos\gestion-cujae(GC)\menu-users/usr.h

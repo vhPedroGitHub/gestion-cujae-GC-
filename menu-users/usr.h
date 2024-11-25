@@ -1,3 +1,5 @@
+#ifndef USER_H 
+#define USER_H
 
 #include<iostream>
 #include<libpq-fe.h>
@@ -56,3 +58,5 @@ namespace USR {
             ~Student();
     };
 }
+
+#endif // USER_H

@@ -350,4 +350,6 @@ CMakeFiles/GC.dir/gc-functions/gc_init.cpp.obj: \
  C:/PROGRA~1/POSTGR~1/14/include/libpq-fe.h \
  C:/PROGRA~1/POSTGR~1/14/include/postgres_ext.h \
  C:/PROGRA~1/POSTGR~1/14/include/pg_config_ext.h \
- C:/Users/HPI5-7~1/DOCUME~1/Pedro/PROYEC~2/GESTIO~1/menu-users/menu.h
+ C:/Users/HPI5-7~1/DOCUME~1/Pedro/PROYEC~2/GESTIO~1/menu-users/menu.h \
+ C:/Users/HPI5-7~1/DOCUME~1/Pedro/PROYEC~2/GESTIO~1/menu-users/usr.h \
+ C:/Users/HPI5-7~1/DOCUME~1/Pedro/PROYEC~2/GESTIO~1/gc-functions/gc.h

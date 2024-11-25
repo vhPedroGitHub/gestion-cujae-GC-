@@ -12,8 +12,8 @@ int main (){
     while (true){ // en este bucle inicia la aplicacion
         if(gc_db->searchAdmin()){
             std::string user, pass;
+            // ---------------------- sistema de logueo ------------------------------------
             while (true) {
-                // ---------------------- sistema de logueo ------------------------------------
                 // segun el usuario digitado y su tipo de usario se desplegara el menu correspondiente
                 std::cout << "Digite su usuario -> "; std::getline(std::cin, user);
                 std::cout << "Digite su contrasena ->"; std::getline(std::cin, pass);
@@ -37,6 +37,7 @@ int main (){
                     switch (stoi(user_type)) {
                         case 1:
                             admin = new USR::User(stoi(id_user), CI, user_name, password, stoi(user_type), person_n, last_name_1, last_name_2);
+                            menu_admin(admin, gc_db);
                             break;
                         case 2:
                             std::cout<< "El usuario es un profesor" << std::endl;
@@ -52,9 +53,10 @@ int main (){
 
                 }
             }
+            // -------------------------------------------------------------------------------------------------------------------
         } else {
             std::cout << "Debe agregar un admin para poder realizar otras operaciones" << std::endl;
-            gc_db->addUser();
+            gc_db->addUser("1");
         }
     }
 

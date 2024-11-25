@@ -23,7 +23,13 @@ namespace GC {
         static void create_tables_db();
 
         // metodos de insercion de datos 
-        void addUser();
+        void addUser(std::string);
+        void DBgc::addProfessor(std::string);
+        void DBgc::addStudent(std::string);
+        void DBgc::addFaculty();
+        void DBgc::addDeparment();
+        void DBgc::addCareer();
+        void DBgc::addSubject();
 
         // metodos para obtener datos mediante consulta a la base de datos
         PGresult* getUserType_BD(const std::string, const std::string);

@@ -695,7 +695,9 @@ CMakeFiles/GC.dir/gc-functions/gc_init.cpp.obj: C:/Users/HP\ i5-7/Documents/Pedr
   C:/TDM-GCC-64/x86_64-w64-mingw32/include/wow64apiset.h \
   C:/TDM-GCC-64/x86_64-w64-mingw32/include/wtypes.h \
   C:/TDM-GCC-64/x86_64-w64-mingw32/include/wtypesbase.h \
+  C:/Users/HP\ i5-7/Documents/Pedro/ProyectoConvalidacionBasedeDatos/gestion-cujae(GC)/gc-functions/gc.h \
   C:/Users/HP\ i5-7/Documents/Pedro/ProyectoConvalidacionBasedeDatos/gestion-cujae(GC)/menu-users/menu.h \
+  C:/Users/HP\ i5-7/Documents/Pedro/ProyectoConvalidacionBasedeDatos/gestion-cujae(GC)/menu-users/usr.h \
   C:/Users/HP\ i5-7/Documents/Pedro/ProyectoConvalidacionBasedeDatos/gestion-cujae(GC)/gc-functions/gc.h
 
 CMakeFiles/GC.dir/gc-functions/gc_insert.cpp.obj: C:/Users/HP\ i5-7/Documents/Pedro/ProyectoConvalidacionBasedeDatos/gestion-cujae(GC)/gc-functions/gc_insert.cpp \
@@ -1741,6 +1743,7 @@ CMakeFiles/GC.dir/main.cpp.obj: C:/Users/HP\ i5-7/Documents/Pedro/ProyectoConval
   C:/TDM-GCC-64/x86_64-w64-mingw32/include/wtypes.h \
   C:/TDM-GCC-64/x86_64-w64-mingw32/include/wtypesbase.h \
   C:/Users/HP\ i5-7/Documents/Pedro/ProyectoConvalidacionBasedeDatos/gestion-cujae(GC)/gc-functions/gc.h \
+  C:/Users/HP\ i5-7/Documents/Pedro/ProyectoConvalidacionBasedeDatos/gestion-cujae(GC)/gc-functions/gc.h \
   C:/Users/HP\ i5-7/Documents/Pedro/ProyectoConvalidacionBasedeDatos/gestion-cujae(GC)/menu-users/menu.h \
   C:/Users/HP\ i5-7/Documents/Pedro/ProyectoConvalidacionBasedeDatos/gestion-cujae(GC)/menu-users/usr.h
 
@@ -1855,6 +1858,7 @@ CMakeFiles/GC.dir/menu-users/menu.cpp.obj: C:/Users/HP\ i5-7/Documents/Pedro/Pro
   C:/TDM-GCC-64/lib/gcc/x86_64-w64-mingw32/10.3.0/include/c++/iosfwd \
   C:/TDM-GCC-64/lib/gcc/x86_64-w64-mingw32/10.3.0/include/c++/iostream \
   C:/TDM-GCC-64/lib/gcc/x86_64-w64-mingw32/10.3.0/include/c++/istream \
+  C:/TDM-GCC-64/lib/gcc/x86_64-w64-mingw32/10.3.0/include/c++/limits \
   C:/TDM-GCC-64/lib/gcc/x86_64-w64-mingw32/10.3.0/include/c++/new \
   C:/TDM-GCC-64/lib/gcc/x86_64-w64-mingw32/10.3.0/include/c++/ostream \
   C:/TDM-GCC-64/lib/gcc/x86_64-w64-mingw32/10.3.0/include/c++/stdexcept \
@@ -2090,7 +2094,9 @@ CMakeFiles/GC.dir/menu-users/menu.cpp.obj: C:/Users/HP\ i5-7/Documents/Pedro/Pro
   C:/TDM-GCC-64/x86_64-w64-mingw32/include/wow64apiset.h \
   C:/TDM-GCC-64/x86_64-w64-mingw32/include/wtypes.h \
   C:/TDM-GCC-64/x86_64-w64-mingw32/include/wtypesbase.h \
-  C:/Users/HP\ i5-7/Documents/Pedro/ProyectoConvalidacionBasedeDatos/gestion-cujae(GC)/menu-users/menu.h
+  C:/Users/HP\ i5-7/Documents/Pedro/ProyectoConvalidacionBasedeDatos/gestion-cujae(GC)/gc-functions/gc.h \
+  C:/Users/HP\ i5-7/Documents/Pedro/ProyectoConvalidacionBasedeDatos/gestion-cujae(GC)/menu-users/menu.h \
+  C:/Users/HP\ i5-7/Documents/Pedro/ProyectoConvalidacionBasedeDatos/gestion-cujae(GC)/menu-users/usr.h
 
 CMakeFiles/GC.dir/menu-users/usr.cpp.obj: C:/Users/HP\ i5-7/Documents/Pedro/ProyectoConvalidacionBasedeDatos/gestion-cujae(GC)/menu-users/usr.cpp \
   C:/Program\ Files/PostgreSQL/14/include/libpq-fe.h \
@@ -2978,6 +2984,8 @@ C:/TDM-GCC-64/x86_64-w64-mingw32/include/lzexpand.h:
 C:/TDM-GCC-64/x86_64-w64-mingw32/include/mcx.h:
 
 C:/TDM-GCC-64/x86_64-w64-mingw32/include/memoryapi.h:
+
+C:/TDM-GCC-64/lib/gcc/x86_64-w64-mingw32/10.3.0/include/c++/limits:
 
 C:/TDM-GCC-64/x86_64-w64-mingw32/include/servprov.h:
 

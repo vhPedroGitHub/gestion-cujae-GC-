@@ -1,6 +1,7 @@
 CMakeFiles/GC.dir/menu-users/menu.cpp.obj: \
  C:\Users\HP\ i5-7\Documents\Pedro\ProyectoConvalidacionBasedeDatos\gestion-cujae(GC)\menu-users\menu.cpp \
- C:\Users\HP\ i5-7\Documents\Pedro\ProyectoConvalidacionBasedeDatos\gestion-cujae(GC)\menu-users\menu.h \
+ C:/Users/HP\ i5-7/Documents/Pedro/ProyectoConvalidacionBasedeDatos/gestion-cujae(GC)/menu-users/menu.h \
+ C:/Users/HP\ i5-7/Documents/Pedro/ProyectoConvalidacionBasedeDatos/gestion-cujae(GC)/menu-users/usr.h \
  C:/TDM-GCC-64/lib/gcc/x86_64-w64-mingw32/10.3.0/include/c++/iostream \
  C:/TDM-GCC-64/lib/gcc/x86_64-w64-mingw32/10.3.0/include/c++/x86_64-w64-mingw32/bits/c++config.h \
  C:/TDM-GCC-64/lib/gcc/x86_64-w64-mingw32/10.3.0/include/c++/x86_64-w64-mingw32/bits/os_defines.h \
@@ -349,4 +350,7 @@ CMakeFiles/GC.dir/menu-users/menu.cpp.obj: \
  C:/TDM-GCC-64/lib/gcc/x86_64-w64-mingw32/10.3.0/include/c++/bits/istream.tcc \
  C:/PROGRA~1/POSTGR~1/14/include/libpq-fe.h \
  C:/PROGRA~1/POSTGR~1/14/include/postgres_ext.h \
- C:/PROGRA~1/POSTGR~1/14/include/pg_config_ext.h
+ C:/PROGRA~1/POSTGR~1/14/include/pg_config_ext.h \
+ C:/Users/HP\ i5-7/Documents/Pedro/ProyectoConvalidacionBasedeDatos/gestion-cujae(GC)/gc-functions/gc.h \
+ C:/Users/HP\ i5-7/Documents/Pedro/ProyectoConvalidacionBasedeDatos/gestion-cujae(GC)/gc-functions/gc.h \
+ C:/TDM-GCC-64/lib/gcc/x86_64-w64-mingw32/10.3.0/include/c++/limits
