@@ -23,8 +23,11 @@ int get_number_range(int min, int max) {
     return number;
 }
 
-void submenu_add() {
+void submenu_add(GC::DBgc *gc_db) {
     while (true) {
+        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); // Ignore the invalid input
+        std::cin.clear(); // Clear the error flag
+
         std::cout << "1- Agregar estudiante" << std::endl;
         std::cout << "2- Agregar profesor" << std::endl;
         std::cout << "3- Agregar admin" << std::endl;
@@ -42,20 +45,51 @@ void submenu_add() {
 
         // Aquí puedes agregar la lógica para cada opción
         switch (opcion) {
-            case 1: std::cout << "Agregar estudiante" << std::endl; break;
-            case 2: std::cout << "Agregar profesor" << std::endl; break;
-            case 3: std::cout << "Agregar admin" << std::endl; break;
-            case 4: std::cout << "Agregar facultad" << std::endl; break;
-            case 5: std::cout << "Agregar carrera" << std::endl; break;
-            case 6: std::cout << "Agregar asignatura" << std::endl; break;
-            case 7: std::cout << "Agregar departamento" << std::endl; break;
+            case 1: 
+                std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); // Ignore the invalid input
+                std::cin.clear(); // Clear the error flag
+                gc_db->addStudent("3"); 
+                break;
+            case 2: 
+                std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); // Ignore the invalid input
+                std::cin.clear(); // Clear the error flag
+                gc_db->addProfessor("2"); 
+                break;
+            case 3: 
+                std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); // Ignore the invalid input
+                std::cin.clear(); // Clear the error flag
+                gc_db->addUser("1"); 
+                 break;
+            case 4: 
+                std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); // Ignore the invalid input
+                std::cin.clear(); // Clear the error flag
+                gc_db->addFaculty(); 
+                break;
+            case 5:
+                std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); // Ignore the invalid input 
+                std::cin.clear(); // Clear the error flag
+                gc_db->addCareer(); 
+                break;
+            case 6:
+                std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); // Ignore the invalid input 
+                std::cin.clear(); // Clear the error flag
+                gc_db->addSubject(); 
+                break;
+            case 7:
+                std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); // Ignore the invalid input 
+                std::cin.clear(); // Clear the error flag
+                gc_db->addDeparment(); 
+                break;
             default: std::cout << "Opción no válida, intenta de nuevo." << std::endl; break;
         }
     }
 }
 
-void submenu_modify() {
+void submenu_modify(GC::DBgc *gc_db) {
     while (true) {
+        std::cin.clear(); // Clear the error flag
+        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); // Ignore the invalid input
+
         std::cout << "1- Modificar estudiante" << std::endl;
         std::cout << "2- Modificar profesor" << std::endl;
         std::cout << "3- Modificar admin" << std::endl;
@@ -85,8 +119,11 @@ void submenu_modify() {
     }
 }
 
-void submenu_delete() {
+void submenu_delete(GC::DBgc *gc_db) {
     while (true) {
+        std::cin.clear(); // Clear the error flag
+        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); // Ignore the invalid input
+
         std::cout << "1- Eliminar estudiante" << std::endl;
         std::cout << "2- Eliminar profesor" << std::endl;
         std::cout << "3- Eliminar admin" << std::endl;
@@ -103,7 +140,7 @@ void submenu_delete() {
         if (opcion == 8) break;
 
         // Aquí puedes agregar la lógica para cada opción
-        switch (opcion) {
+        switch (opcion) {    
             case 1: std::cout << "Eliminar estudiante" << std::endl; break;
             case 2: std::cout << "Eliminar profesor" << std::endl; break;
             case 3: std::cout << "Eliminar admin" << std::endl; break;
@@ -131,9 +168,9 @@ void menu_admin(USR::User *admin, GC::DBgc *gc_db) {
         std::cin >> opcion;
 
         switch (opcion) {
-            case 1: submenu_add(); break;
-            case 2: submenu_modify(); break;
-            case 3: submenu_delete(); break;
+            case 1: submenu_add(gc_db); break;
+            case 2: submenu_modify(gc_db); break;
+            case 3: submenu_delete(gc_db); break;
             case 4: std::cout << "Saliendo del sistema..." << std::endl; return;
             default: std::cout << "Opción no válida, intenta de nuevo." << std::endl; break;
         }

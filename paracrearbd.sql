@@ -3,7 +3,7 @@ CREATE TABLE students (
     id_faculty INTEGER,
     id_user INTEGER NOT NULL,
     id_career INTEGER,
-    "group" INTEGER NOT NULL
+    group_student INTEGER NOT NULL
 );
 
 CREATE TABLE profesors (
@@ -21,18 +21,18 @@ CREATE TABLE subjects (
 
 CREATE TABLE faculties (
     id_faculty SERIAL PRIMARY KEY,
-    n_faculty TEXT NOT NULL
+    n_faculty TEXT NOT NULL UNIQUE
 );
 
 CREATE TABLE careers_age (
     id_career_age SERIAL PRIMARY KEY,
     age INTEGER NOT NULL,
-    id_faculty INTEGER NOT NULL,
     id_career INTEGER NOT NULL
 );
 
 CREATE TABLE careers (
     id_career SERIAL PRIMARY KEY,
+    id_faculty INTEGER NOT NULL,
     n_career VARCHAR(50) NOT NULL,
     duration INTEGER NOT NULL
 );
@@ -60,7 +60,7 @@ CREATE TABLE classes (
     id_classe SERIAL PRIMARY KEY,
     id_career_subject INTEGER,
     cantidad_turnos INTEGER,
-    "date" TIMESTAMP
+    date_assis TIMESTAMP
 );
 
 CREATE TABLE assistances (
@@ -87,7 +87,7 @@ CREATE TABLE personal_dates (
 
 CREATE TABLE students_images (
     id_student_image INTEGER PRIMARY KEY,
-    directory_img TEXT NOT NULL,
+    directory_img TEXT NOT NULL UNIQUE,
     id_student INTEGER NOT NULL
 );
 

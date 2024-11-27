@@ -68,7 +68,7 @@ namespace GC {
                 id_faculty INTEGER,
                 id_user INTEGER NOT NULL,
                 id_career INTEGER,
-                "group" INTEGER NOT NULL
+                group_student INTEGER NOT NULL
             );
 
             CREATE TABLE profesors (
@@ -86,18 +86,18 @@ namespace GC {
 
             CREATE TABLE faculties (
                 id_faculty SERIAL PRIMARY KEY,
-                n_faculty TEXT NOT NULL
+                n_faculty TEXT NOT NULL UNIQUE
             );
 
             CREATE TABLE careers_age (
                 id_career_age SERIAL PRIMARY KEY,
                 age INTEGER NOT NULL,
-                id_faculty INTEGER NOT NULL,
                 id_career INTEGER NOT NULL
             );
 
             CREATE TABLE careers (
                 id_career SERIAL PRIMARY KEY,
+                id_faculty INTEGER NOT NULL,
                 n_career VARCHAR(50) NOT NULL,
                 duration INTEGER NOT NULL
             );
@@ -125,7 +125,7 @@ namespace GC {
                 id_classe SERIAL PRIMARY KEY,
                 id_career_subject INTEGER,
                 cantidad_turnos INTEGER,
-                "date" TIMESTAMP
+                date_assis TIMESTAMP
             );
 
             CREATE TABLE assistances (
@@ -152,7 +152,7 @@ namespace GC {
 
             CREATE TABLE students_images (
                 id_student_image INTEGER PRIMARY KEY,
-                directory_img TEXT NOT NULL,
+                directory_img TEXT NOT NULL UNIQUE,
                 id_student INTEGER NOT NULL
             );
 
@@ -165,7 +165,7 @@ namespace GC {
             ALTER TABLE profesors ADD FOREIGN KEY (id_user) REFERENCES users (id_user);
             ALTER TABLE students ADD FOREIGN KEY (id_user) REFERENCES users (id_user);
             ALTER TABLE personal_dates ADD FOREIGN KEY (CI) REFERENCES users (CI);
-            ALTER TABLE careers_age ADD FOREIGN KEY (id_faculty) REFERENCES faculties (id_faculty);
+            ALTER TABLE careers ADD FOREIGN KEY (id_faculty) REFERENCES faculties (id_faculty);
             ALTER TABLE students ADD FOREIGN KEY (id_career) REFERENCES careers_age (id_career_age);
             ALTER TABLE careers_age_subjects ADD FOREIGN KEY (id_career) REFERENCES careers_age (id_career_age);
             ALTER TABLE careers_age_subjects ADD FOREIGN KEY (id_subject) REFERENCES subjects (id_subject);
