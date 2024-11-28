@@ -2,46 +2,24 @@
 #include <vector>
 #include <limits>
 
-int selectElement(const std::vector<std::string>& elements) {
+std::string selectElement( std::vector<GC::ConsultInd> elements) {
     int selection = -1;
 
     while (true) {
         std::cout << "Seleccione un elemento del siguiente listado:\n";
         for (size_t i = 0; i < elements.size(); ++i) {
-            std::cout << i + 1 << ". " << elements[i] << "\n";
+            std::cout << i + 1 << ". " << elements[i].getValue() << "\n";
         }
         
         std::cout << "Ingrese el número del elemento seleccionado: ";
         std::cin >> selection;
 
         if (selection > 0 && selection <= elements.size()) {
-            return selection;
+            return elements[selection-1].getIndice();
         } else {
             std::cout << "Selección inválida. Por favor, intente nuevamente.\n";
         }
     }
-}
-
-int getDeparmentId(PGconn *conn, const std::string departmentName) {
-    const char *paramValues[1] = { departmentName.c_str() }; 
-    const char *query = "SELECT id_deparment FROM deparments WHERE n_deparment = $1"; 
-    Oid type_param[1] = { 25 };
-    PGresult *res = PQexecParams(conn, query, 1, type_param, paramValues, NULL, NULL, 0);
-
-    if (PQresultStatus(res) != PGRES_TUPLES_OK) {
-        std::cerr << "Error retrieving department ID: " << PQerrorMessage(conn) << std::endl;
-        PQclear(res);
-    }
-
-    if (PQntuples(res) == 0) {
-        std::cerr << "Department not found.\n";
-        PQclear(res);
-        return -1; // Indicando que no se encontró el departamento
-    }
-
-    int departmentId = std::stoi(PQgetvalue(res, 0, 0));
-    PQclear(res);
-    return departmentId;
 }
 
 int getLastUserId(PGconn *conn) {
@@ -64,24 +42,18 @@ int getLastUserId(PGconn *conn) {
 
 namespace GC {
     void DBgc::addUser(std::string user_type) {
-        std::string CI, user_name, password_user, name, last_name_1, last_name_2;
+        std::string user_name, password_user;
         const char *paramValues[4];
 
-        std::cout << "Agregue el CI -> " << std::endl; std::getline(std::cin, CI);
-        std::cout << "Agregue el nombre de usuario -> " << std::endl; std::getline(std::cin, user_name);
+        std::cout << "Agregue el nombre del usuario admin -> " << std::endl; std::getline(std::cin, user_name);
         std::cout << "Agregue la contrasena -> " << std::endl; std::getline(std::cin, password_user);
 
         // Iniciar la transacción
         PGresult *res = PQexec(conn_gc, "BEGIN");
 
-        if (PQresultStatus(res) != PGRES_COMMAND_OK) {
-            std::cerr << "BEGIN command failed: " << PQerrorMessage(conn_gc) << std::endl;
-            PQclear(res);
-            return;
-        }
         PQclear(res);
 
-        paramValues[0] = CI.c_str();
+        paramValues[0] = NULL;
         paramValues[1] = user_name.c_str();
         paramValues[2] = password_user.c_str();
         paramValues[3] = user_type.c_str();
@@ -103,41 +75,8 @@ namespace GC {
             return;
         }
 
-        PQclear(res);
-
-        std::cout << "Agregue el nombre -> " << std::endl; std::getline(std::cin, name);
-        std::cout << "Agregue el primer apellido -> " << std::endl; std::getline(std::cin, last_name_1);
-        std::cout << "Agregue el segundo apellido -> " << std::endl; std::getline(std::cin, last_name_2);
-
-        paramValues[0] = CI.c_str();
-        paramValues[1] = name.c_str();
-        paramValues[2] = last_name_1.c_str();
-        paramValues[3] = last_name_2.c_str();
-
-        res = PQexecParams(conn_gc,
-                        "INSERT INTO personal_dates (CI, person_n, last_name_1, last_name_2) VALUES ($1, $2, $3, $4)",
-                        4,
-                        NULL,
-                        paramValues,
-                        NULL,
-                        NULL,
-                        0);
-
-        if (PQresultStatus(res) != PGRES_COMMAND_OK) {
-            std::cerr << "INSERT command failed: " << PQerrorMessage(conn_gc) << std::endl;
-            PQexec(conn_gc, "ROLLBACK");
-            PQclear(res);
-            return;
-        }
-
         // Commit la transacción si todo va bien
         res = PQexec(conn_gc, "COMMIT");
-
-        if (PQresultStatus(res) != PGRES_COMMAND_OK) {
-            std::cerr << "COMMIT command failed: " << PQerrorMessage(conn_gc) << std::endl;
-            PQclear(res);
-            return;
-        }
 
         std::cout << "Todo termino correctamente" << std::endl;
         PQclear(res);
@@ -212,24 +151,11 @@ namespace GC {
 
         PQclear(res);
 
-        res = PQexec(conn_gc, "SELECT n_deparment FROM deparments");
-        if (PQresultStatus(res) != PGRES_TUPLES_OK) {
-            std::cerr << "Error retrieving deparments: " << PQerrorMessage(conn_gc) << std::endl;
-            PQclear(res);
-        }
-
         // agregando los datos particulares del profesor
-        std::vector<std::string> deparments;
-        int nDeparments = PQntuples(res);
-        for (int i = 0; i < nDeparments; ++i) {
-            deparments.push_back(PQgetvalue(res, i, 0));
-        }
+        
+        std::vector<ConsultInd> deparments = DBgc::getInfos("deparments", "id_deparment", "n_deparment");
 
-        PQclear(res);
-
-        int deparment_select = selectElement(deparments);
-
-        int deparment_id = getDeparmentId(conn_gc, deparments[deparment_select-1]);
+        std::string deparment_select = selectElement(deparments);
         std::cout << "seleccionado el departameto" << std::endl;
         int user_id = getLastUserId(conn_gc);
 
@@ -240,7 +166,7 @@ namespace GC {
 
         std::cout << "Digite la categoria del profesor -> "; std::getline(std::cin, category);
     
-        const char *paramValues_profesor[3] = { std::to_string(deparment_id).c_str(), std::to_string(user_id).c_str(), category.c_str() };
+        const char *paramValues_profesor[3] = { deparment_select.c_str(), std::to_string(user_id).c_str(), category.c_str() };
         std::string query = "INSERT INTO profesors (id_deparment, id_user, category) VALUES ($1, $2, $3)"; 
         // Ejecutar la consulta 
         res = PQexecParams(conn_gc, query.c_str(), 3, NULL, paramValues_profesor, NULL, NULL, 0);
@@ -262,7 +188,103 @@ namespace GC {
     }
 
     void DBgc::addStudent(std::string user_type){
-        
+        std::string CI, user_name, password_user, name, last_name_1, last_name_2;
+        const char *paramValues[4];
+
+        std::cout << "Agregue el CI -> " << std::endl; std::getline(std::cin, CI);
+        std::cout << "Agregue el nombre de usuario -> " << std::endl; std::getline(std::cin, user_name);
+        std::cout << "Agregue la contrasena -> " << std::endl; std::getline(std::cin, password_user);
+
+        // Iniciar la transacción
+        PGresult *res = PQexec(conn_gc, "BEGIN");
+
+        if (PQresultStatus(res) != PGRES_COMMAND_OK) {
+            std::cerr << "BEGIN command failed: " << PQerrorMessage(conn_gc) << std::endl;
+            PQclear(res);
+            return;
+        }
+        PQclear(res);
+
+        paramValues[0] = CI.c_str();
+        paramValues[1] = user_name.c_str();
+        paramValues[2] = password_user.c_str();
+        paramValues[3] = user_type.c_str();
+
+        const Oid paramsTypes[4] = {1043, 1043, 1043, 23};
+        res = PQexecParams(conn_gc,
+                        "INSERT INTO users (CI, user_name, password_user, user_type) VALUES ($1, $2, $3, $4)",
+                        4,
+                        paramsTypes,
+                        paramValues,
+                        NULL,
+                        NULL,
+                        0);
+
+        if (PQresultStatus(res) != PGRES_COMMAND_OK) {
+            std::cerr << "INSERT command failed: " << PQerrorMessage(conn_gc) << std::endl;
+            PQexec(conn_gc, "ROLLBACK");
+            PQclear(res);
+            return;
+        }
+
+        PQclear(res);
+
+        std::cout << "Agregue el nombre -> " << std::endl; std::getline(std::cin, name);
+        std::cout << "Agregue el primer apellido -> " << std::endl; std::getline(std::cin, last_name_1);
+        std::cout << "Agregue el segundo apellido -> " << std::endl; std::getline(std::cin, last_name_2);
+
+        paramValues[0] = CI.c_str();
+        paramValues[1] = name.c_str();
+        paramValues[2] = last_name_1.c_str();
+        paramValues[3] = last_name_2.c_str();
+
+        res = PQexecParams(conn_gc,
+                        "INSERT INTO personal_dates (CI, person_n, last_name_1, last_name_2) VALUES ($1, $2, $3, $4)",
+                        4,
+                        NULL,
+                        paramValues,
+                        NULL,
+                        NULL,
+                        0);
+
+        if (PQresultStatus(res) != PGRES_COMMAND_OK) {
+            std::cerr << "INSERT command failed: " << PQerrorMessage(conn_gc) << std::endl;
+            PQexec(conn_gc, "ROLLBACK");
+            PQclear(res);
+            return;
+        }
+
+        PQclear(res);
+
+        // agregando los datos particulares del alumno
+        int user_id = getLastUserId(conn_gc);
+
+        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); // Ignore the invalid input
+        std::cin.clear(); // Clear the error flag
+
+        std::string group;
+
+        std::cout << "Digite el grupo del alumno -> "; std::getline(std::cin, group);
+    
+        const char *paramValues_profesor[3] = { std::to_string(user_id).c_str(), NULL, group.c_str() };
+        std::string query = "INSERT INTO students (id_user, id_career, group_student) VALUES ($1, $2, $3)"; 
+        // Ejecutar la consulta 
+        res = PQexecParams(conn_gc, query.c_str(), 3, NULL, paramValues_profesor, NULL, NULL, 0);
+
+        if (PQresultStatus(res) != PGRES_COMMAND_OK) {
+            std::cerr << "INSERT command failed: " << PQerrorMessage(conn_gc) << std::endl;
+            PQexec(conn_gc, "ROLLBACK");
+            PQclear(res);
+            return;
+        }
+
+        PQclear(res);
+
+        res = PQexec(conn_gc, "COMMIT");
+
+        // Commit la transacción si todo va bien
+        std::cout << "Todo termino correctamente" << std::endl;
+        PQclear(res);
     }
 
     void DBgc::addFaculty(){
@@ -374,7 +396,35 @@ namespace GC {
     }
 
     void DBgc::addSubject(){
+        // Consulta SQL para insertar un nuevo registro en la tabla subjects
+        const char* query = "INSERT INTO subjects (id_profesor, n_subject) VALUES ($1, $2)";
+        
+        std::string n_subject;
 
+        std::cout << "Diga el nombre de la asignatura"; std::getline(std::cin, n_subject);
+
+        // Parámetros para la consulta
+        const char* paramValues[2];
+        paramValues[0] = NULL;
+        paramValues[1] = n_subject.c_str();
+
+        // Ejecutar la consulta
+        PGresult *res = PQexecParams(conn_gc,
+                                    query,
+                                    2, 
+                                    NULL, 
+                                    paramValues,
+                                    NULL,
+                                    NULL, 
+                                    0);
+
+        if (PQresultStatus(res) != PGRES_COMMAND_OK) {
+            std::cerr << "Error inserting subject: " << PQerrorMessage(conn_gc) << std::endl;
+        } else {
+            std::cout << "Subject inserted successfully." << std::endl;
+        }
+
+        PQclear(res); // Liberar el resultado
     }
 
 }

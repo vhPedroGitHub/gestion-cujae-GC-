@@ -12,6 +12,7 @@ Todos los formuliarios que se utilizaran, los menus iterativos para cada usuario
 #include<iostream>
 #include<libpq-fe.h>
 #include<string>
+#include <limits> 
 
 void menu_admin(USR::User *, GC::DBgc *);
 void menu_profesor(USR::Profesor *, GC::DBgc *);

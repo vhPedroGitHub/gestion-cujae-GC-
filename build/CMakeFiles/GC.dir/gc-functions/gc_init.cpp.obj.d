@@ -350,6 +350,12 @@ CMakeFiles/GC.dir/gc-functions/gc_init.cpp.obj: \
  C:/PROGRA~1/POSTGR~1/14/include/libpq-fe.h \
  C:/PROGRA~1/POSTGR~1/14/include/postgres_ext.h \
  C:/PROGRA~1/POSTGR~1/14/include/pg_config_ext.h \
+ C:/TDM-GCC-64/lib/gcc/x86_64-w64-mingw32/10.3.0/include/c++/vector \
+ C:/TDM-GCC-64/lib/gcc/x86_64-w64-mingw32/10.3.0/include/c++/bits/stl_uninitialized.h \
+ C:/TDM-GCC-64/lib/gcc/x86_64-w64-mingw32/10.3.0/include/c++/bits/stl_vector.h \
+ C:/TDM-GCC-64/lib/gcc/x86_64-w64-mingw32/10.3.0/include/c++/bits/stl_bvector.h \
+ C:/TDM-GCC-64/lib/gcc/x86_64-w64-mingw32/10.3.0/include/c++/bits/vector.tcc \
  C:/Users/HPI5-7~1/DOCUME~1/Pedro/PROYEC~2/GESTIO~1/menu-users/menu.h \
  C:/Users/HPI5-7~1/DOCUME~1/Pedro/PROYEC~2/GESTIO~1/menu-users/usr.h \
- C:/Users/HPI5-7~1/DOCUME~1/Pedro/PROYEC~2/GESTIO~1/gc-functions/gc.h
+ C:/Users/HPI5-7~1/DOCUME~1/Pedro/PROYEC~2/GESTIO~1/gc-functions/gc.h \
+ C:/TDM-GCC-64/lib/gcc/x86_64-w64-mingw32/10.3.0/include/c++/limits

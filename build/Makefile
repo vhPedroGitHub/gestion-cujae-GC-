@@ -128,6 +128,30 @@ GC/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\GC.dir\build.make CMakeFiles/GC.dir/build
 .PHONY : GC/fast
 
+gc-functions/consult.obj: gc-functions/consult.cpp.obj
+.PHONY : gc-functions/consult.obj
+
+# target to build an object file
+gc-functions/consult.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GC.dir\build.make CMakeFiles/GC.dir/gc-functions/consult.cpp.obj
+.PHONY : gc-functions/consult.cpp.obj
+
+gc-functions/consult.i: gc-functions/consult.cpp.i
+.PHONY : gc-functions/consult.i
+
+# target to preprocess a source file
+gc-functions/consult.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GC.dir\build.make CMakeFiles/GC.dir/gc-functions/consult.cpp.i
+.PHONY : gc-functions/consult.cpp.i
+
+gc-functions/consult.s: gc-functions/consult.cpp.s
+.PHONY : gc-functions/consult.s
+
+# target to generate assembly for a file
+gc-functions/consult.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GC.dir\build.make CMakeFiles/GC.dir/gc-functions/consult.cpp.s
+.PHONY : gc-functions/consult.cpp.s
+
 gc-functions/gc_getinfo.obj: gc-functions/gc_getinfo.cpp.obj
 .PHONY : gc-functions/gc_getinfo.obj
 
@@ -272,6 +296,30 @@ menu-users/menu.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\GC.dir\build.make CMakeFiles/GC.dir/menu-users/menu.cpp.s
 .PHONY : menu-users/menu.cpp.s
 
+menu-users/menu_admin.obj: menu-users/menu_admin.cpp.obj
+.PHONY : menu-users/menu_admin.obj
+
+# target to build an object file
+menu-users/menu_admin.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GC.dir\build.make CMakeFiles/GC.dir/menu-users/menu_admin.cpp.obj
+.PHONY : menu-users/menu_admin.cpp.obj
+
+menu-users/menu_admin.i: menu-users/menu_admin.cpp.i
+.PHONY : menu-users/menu_admin.i
+
+# target to preprocess a source file
+menu-users/menu_admin.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GC.dir\build.make CMakeFiles/GC.dir/menu-users/menu_admin.cpp.i
+.PHONY : menu-users/menu_admin.cpp.i
+
+menu-users/menu_admin.s: menu-users/menu_admin.cpp.s
+.PHONY : menu-users/menu_admin.s
+
+# target to generate assembly for a file
+menu-users/menu_admin.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GC.dir\build.make CMakeFiles/GC.dir/menu-users/menu_admin.cpp.s
+.PHONY : menu-users/menu_admin.cpp.s
+
 menu-users/usr.obj: menu-users/usr.cpp.obj
 .PHONY : menu-users/usr.obj
 
@@ -305,6 +353,9 @@ help:
 	@echo ... edit_cache
 	@echo ... rebuild_cache
 	@echo ... GC
+	@echo ... gc-functions/consult.obj
+	@echo ... gc-functions/consult.i
+	@echo ... gc-functions/consult.s
 	@echo ... gc-functions/gc_getinfo.obj
 	@echo ... gc-functions/gc_getinfo.i
 	@echo ... gc-functions/gc_getinfo.s
@@ -323,6 +374,9 @@ help:
 	@echo ... menu-users/menu.obj
 	@echo ... menu-users/menu.i
 	@echo ... menu-users/menu.s
+	@echo ... menu-users/menu_admin.obj
+	@echo ... menu-users/menu_admin.i
+	@echo ... menu-users/menu_admin.s
 	@echo ... menu-users/usr.obj
 	@echo ... menu-users/usr.i
 	@echo ... menu-users/usr.s

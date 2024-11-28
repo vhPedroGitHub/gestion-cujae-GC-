@@ -4,6 +4,7 @@
 #include<iostream>
 #include<libpq-fe.h>
 #include<string>
+#include<vector>
 
 // Aqui se incluira todas las funciones y clases relacionadas con el funcionamiento del programa unido a la base de datos
 namespace GC {
@@ -11,6 +12,15 @@ namespace GC {
     // constantes
     extern const char* connDBG; // para conectar a la base general
     extern const char* connDB; // para conectar a la bd gc
+
+    class ConsultInd {
+        private:
+            std::string value, indice;
+        public:
+            ConsultInd(const std::string, const std::string);
+            std::string getValue();
+            std::string getIndice();
+    };
 
     class DBgc { // esta clase incluye toda la funcionalidad relacionada con las operaciones en la base de datos
     private:
@@ -33,11 +43,13 @@ namespace GC {
 
         // metodos para obtener datos mediante consulta a la base de datos
         PGresult* getUserType_BD(const std::string, const std::string);
+        static std::vector<ConsultInd> getInfos(const std::string& , const std::string& , const std::string& );
 
         // metodos logicos con la base de datos
         bool searchAdmin();
         bool searchUser(const std::string, const std::string);
     };
+
 
 }
 

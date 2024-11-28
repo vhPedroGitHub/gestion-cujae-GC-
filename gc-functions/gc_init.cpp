@@ -65,7 +65,6 @@ namespace GC {
         const std::string sql = R"(
             CREATE TABLE students (
                 id_student SERIAL PRIMARY KEY,
-                id_faculty INTEGER,
                 id_user INTEGER NOT NULL,
                 id_career INTEGER,
                 group_student INTEGER NOT NULL
