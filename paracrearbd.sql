@@ -24,7 +24,7 @@ CREATE TABLE faculties (
 );
 
 CREATE TABLE careers_age (
-    id_career_age SERIAL PRIMARY KEY,
+    id_career_year SERIAL PRIMARY KEY,
     age INTEGER NOT NULL,
     id_career INTEGER NOT NULL
 );

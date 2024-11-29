@@ -44,10 +44,14 @@ namespace GC {
         // metodos para obtener datos mediante consulta a la base de datos
         PGresult* getUserType_BD(const std::string, const std::string);
         static std::vector<ConsultInd> getInfos(const std::string& , const std::string& , const std::string& );
+        static std::vector<ConsultInd> getInfosALL(const std::string&);
 
         // metodos logicos con la base de datos
         bool searchAdmin();
         bool searchUser(const std::string, const std::string);
+
+        // funciones de verificacion (su objetivo es revisar los registros de cada tabla)
+        void verifiySubject();
     };
 
 

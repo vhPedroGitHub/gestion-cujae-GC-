@@ -18,25 +18,25 @@ int main (){
                 std::cout << "Digite su usuario -> "; std::getline(std::cin, user);
                 std::cout << "Digite su contrasena ->"; std::getline(std::cin, pass);
                 if (gc_db->searchUser(user, pass)){ // se verifica si el usuario exciste
+                
                     std::cout << "El usuario se ha encontrado con excito" << std::endl; 
                     PGresult* user_get = gc_db->getUserType_BD(user, pass); // obtenemos los dato del tipo de usuario
 
                     // obtenemos los datos correspondientes al usuario
-                    std::string id_user, CI, user_name, password, user_type, person_n, last_name_1, last_name_2;  
+                    std::string id_user, CI, user_name, password, user_type;  
                     id_user = PQgetvalue(user_get, 0, 0);
                     CI = PQgetvalue(user_get, 0, 1);
                     user_name = PQgetvalue(user_get, 0, 2);
                     password = PQgetvalue(user_get, 0, 3);
                     user_type = PQgetvalue(user_get, 0, 4);
-                    person_n = PQgetvalue(user_get, 0, 5);
-                    last_name_1 = PQgetvalue(user_get, 0, 6);
-                    last_name_2 = PQgetvalue(user_get, 0, 7);
+
+                    std::cout << id_user << std::endl;
 
                     USR::User *admin;
 
                     switch (stoi(user_type)) {
                         case 1:
-                            admin = new USR::User(stoi(id_user), CI, user_name, password, stoi(user_type), person_n, last_name_1, last_name_2);
+                            admin = new USR::User(stoi(id_user), CI, user_name, password, stoi(user_type));
                             menu_admin(admin, gc_db);
                             break;
                         case 2:
@@ -55,8 +55,20 @@ int main (){
             }
             // -------------------------------------------------------------------------------------------------------------------
         } else {
-            std::cout << "Debe agregar un admin para poder realizar otras operaciones" << std::endl;
+            std::cout << "Es necesario agregar al menos un usuario de tipo admin" << std::endl;
             gc_db->addUser("1");
+            std::cout << "Es necesario agregar al menos una facultad" << std::endl;
+            gc_db->addFaculty();
+            std::cout << "Es necesario agregar al menos un departamento" << std::endl;
+            gc_db->addDeparment();
+            std::cout << "Es necesario agregar al menos un profesor" << std::endl;
+            gc_db->addProfessor("2");
+            std::cout << "Es necesario agregar al menos una carrera" << std::endl;
+            gc_db->addCareer();
+            std::cout << "Es necesario agregar al menos una asignatura" << std::endl;
+            gc_db->addSubject();
+            std::cout << "Es necesario agregar al menos un estudiante" << std::endl;
+            gc_db->addStudent("3");
         }
     }
 

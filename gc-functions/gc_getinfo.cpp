@@ -6,9 +6,8 @@ namespace GC {
         const char *paramValues[2] = { username.c_str(), password.c_str() };
 
         PGresult *res = PQexecParams(conn_gc,
-                                     "SELECT id_user, u.CI, user_name, password_user, user_type, person_n, last_name_1, last_name_2 "
-                                     "FROM users u "
-                                     "INNER JOIN personal_dates pd ON pd.CI = u.CI "
+                                     "SELECT id_user, users.CI_identity, user_name, password_user, user_type "
+                                     "FROM users "
                                      "WHERE user_name = $1 AND password_user = $2",
                                      2,       // Número de parámetros
                                      NULL,    // Tipos de parámetros (NULL para usar tipos predeterminados)
@@ -58,4 +57,39 @@ namespace GC {
 
         return deparments;
     }
+
+    std::vector<ConsultInd> DBgc::getInfosALL(const std::string& query){
+        PGconn *conn_gc = PQconnectdb(connDB);
+
+        if (PQstatus(conn_gc) != CONNECTION_OK) {
+            std::cerr << "Connection to database failed: " << PQerrorMessage(conn_gc) << std::endl;
+            PQfinish(conn_gc);
+        }
+
+        // obtenemos los datos correspondientes
+        PGresult *res = PQexec(conn_gc, query.c_str());
+        if (PQresultStatus(res) != PGRES_TUPLES_OK) {
+            std::cerr << "Error retrieving deparments: " << PQerrorMessage(conn_gc) << std::endl;
+            PQclear(res);
+        }
+
+        std::vector<GC::ConsultInd> results;
+        int nfiles = PQntuples(res);
+        int ncolumns = PQnfields(res);
+        std::string record = "";
+        for (int i = 0; i < nfiles; ++i) {
+            for (int j = 0; j < ncolumns; j++){
+                record = record + PQgetvalue(res, i, j) + " ";
+            }
+            
+            results.push_back( GC::ConsultInd(record, PQgetvalue(res, i, 0)) );
+
+            record = "";
+        }
+
+        PQclear(res);
+
+        return results;
+    }
+
 }

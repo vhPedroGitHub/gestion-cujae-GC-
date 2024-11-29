@@ -53,16 +53,15 @@ namespace GC {
 
         PQclear(res);
 
-        paramValues[0] = NULL;
-        paramValues[1] = user_name.c_str();
-        paramValues[2] = password_user.c_str();
-        paramValues[3] = user_type.c_str();
+        paramValues[0] = user_name.c_str();
+        paramValues[1] = password_user.c_str();
+        paramValues[2] = user_type.c_str();
 
-        const Oid paramsTypes[4] = {1043, 1043, 1043, 23};
+        //const Oid paramsTypes[4] = {1043, 1043, 1043, 23};
         res = PQexecParams(conn_gc,
-                        "INSERT INTO users (CI, user_name, password_user, user_type) VALUES ($1, $2, $3, $4)",
-                        4,
-                        paramsTypes,
+                        "INSERT INTO users (user_name, password_user, user_type) VALUES ($1, $2, $3)",
+                        3,
+                        NULL,
                         paramValues,
                         NULL,
                         NULL,
@@ -83,10 +82,9 @@ namespace GC {
     }
 
     void DBgc::addProfessor(std::string user_type){
-        std::string CI, user_name, password_user, name, last_name_1, last_name_2;
-        const char *paramValues[4];
+        std::string CI_identity, user_name, password_user, name, last_name_1, last_name_2;
 
-        std::cout << "Agregue el CI -> " << std::endl; std::getline(std::cin, CI);
+        std::cout << "Agregue el CI_identity -> " << std::endl; std::getline(std::cin, CI_identity);
         std::cout << "Agregue el nombre de usuario -> " << std::endl; std::getline(std::cin, user_name);
         std::cout << "Agregue la contrasena -> " << std::endl; std::getline(std::cin, password_user);
 
@@ -98,19 +96,19 @@ namespace GC {
             PQclear(res);
             return;
         }
-        PQclear(res);
 
-        paramValues[0] = CI.c_str();
-        paramValues[1] = user_name.c_str();
-        paramValues[2] = password_user.c_str();
-        paramValues[3] = user_type.c_str();
+        const char *paramValues_1[4];
+        paramValues_1[0] = CI_identity.c_str();
+        paramValues_1[1] = user_name.c_str();
+        paramValues_1[2] = password_user.c_str();
+        paramValues_1[3] = user_type.c_str();
 
         const Oid paramsTypes[4] = {1043, 1043, 1043, 23};
         res = PQexecParams(conn_gc,
-                        "INSERT INTO users (CI, user_name, password_user, user_type) VALUES ($1, $2, $3, $4)",
+                        "INSERT INTO users (CI_identity, user_name, password_user, user_type) VALUES ($1, $2, $3, $4)",
                         4,
                         paramsTypes,
-                        paramValues,
+                        paramValues_1,
                         NULL,
                         NULL,
                         0);
@@ -128,16 +126,17 @@ namespace GC {
         std::cout << "Agregue el primer apellido -> " << std::endl; std::getline(std::cin, last_name_1);
         std::cout << "Agregue el segundo apellido -> " << std::endl; std::getline(std::cin, last_name_2);
 
-        paramValues[0] = CI.c_str();
-        paramValues[1] = name.c_str();
-        paramValues[2] = last_name_1.c_str();
-        paramValues[3] = last_name_2.c_str();
+        const char *paramValues_2[4];
+        paramValues_2[0] = CI_identity.c_str();
+        paramValues_2[1] = name.c_str();
+        paramValues_2[2] = last_name_1.c_str();
+        paramValues_2[3] = last_name_2.c_str();
 
         res = PQexecParams(conn_gc,
-                        "INSERT INTO personal_dates (CI, person_n, last_name_1, last_name_2) VALUES ($1, $2, $3, $4)",
+                        "INSERT INTO personal_dates (CI_identity, person_n, last_name_1, last_name_2) VALUES ($1, $2, $3, $4)",
                         4,
                         NULL,
-                        paramValues,
+                        paramValues_2,
                         NULL,
                         NULL,
                         0);
@@ -148,8 +147,6 @@ namespace GC {
             PQclear(res);
             return;
         }
-
-        PQclear(res);
 
         // agregando los datos particulares del profesor
         
@@ -188,10 +185,9 @@ namespace GC {
     }
 
     void DBgc::addStudent(std::string user_type){
-        std::string CI, user_name, password_user, name, last_name_1, last_name_2;
-        const char *paramValues[4];
+        std::string CI_identity, user_name, password_user, name, last_name_1, last_name_2;
 
-        std::cout << "Agregue el CI -> " << std::endl; std::getline(std::cin, CI);
+        std::cout << "Agregue el CI_identity -> " << std::endl; std::getline(std::cin, CI_identity);
         std::cout << "Agregue el nombre de usuario -> " << std::endl; std::getline(std::cin, user_name);
         std::cout << "Agregue la contrasena -> " << std::endl; std::getline(std::cin, password_user);
 
@@ -205,17 +201,18 @@ namespace GC {
         }
         PQclear(res);
 
-        paramValues[0] = CI.c_str();
-        paramValues[1] = user_name.c_str();
-        paramValues[2] = password_user.c_str();
-        paramValues[3] = user_type.c_str();
-
         const Oid paramsTypes[4] = {1043, 1043, 1043, 23};
+        const char *paramValues_1[4];
+        paramValues_1[0] = CI_identity.c_str();
+        paramValues_1[1] = user_name.c_str();
+        paramValues_1[2] = password_user.c_str();
+        paramValues_1[3] = user_type.c_str();
+
         res = PQexecParams(conn_gc,
-                        "INSERT INTO users (CI, user_name, password_user, user_type) VALUES ($1, $2, $3, $4)",
+                        "INSERT INTO users (CI_identity, user_name, password_user, user_type) VALUES ($1, $2, $3, $4)",
                         4,
                         paramsTypes,
-                        paramValues,
+                        paramValues_1,
                         NULL,
                         NULL,
                         0);
@@ -233,16 +230,17 @@ namespace GC {
         std::cout << "Agregue el primer apellido -> " << std::endl; std::getline(std::cin, last_name_1);
         std::cout << "Agregue el segundo apellido -> " << std::endl; std::getline(std::cin, last_name_2);
 
-        paramValues[0] = CI.c_str();
-        paramValues[1] = name.c_str();
-        paramValues[2] = last_name_1.c_str();
-        paramValues[3] = last_name_2.c_str();
+        const char * paramValues_2[4];
+        paramValues_2[0] = CI_identity.c_str();
+        paramValues_2[1] = name.c_str();
+        paramValues_2[2] = last_name_1.c_str();
+        paramValues_2[3] = last_name_2.c_str();
 
         res = PQexecParams(conn_gc,
-                        "INSERT INTO personal_dates (CI, person_n, last_name_1, last_name_2) VALUES ($1, $2, $3, $4)",
+                        "INSERT INTO personal_dates (CI_identity, person_n, last_name_1, last_name_2) VALUES ($1, $2, $3, $4)",
                         4,
                         NULL,
-                        paramValues,
+                        paramValues_2,
                         NULL,
                         NULL,
                         0);
@@ -267,7 +265,7 @@ namespace GC {
         std::cout << "Digite el grupo del alumno -> "; std::getline(std::cin, group);
     
         const char *paramValues_profesor[3] = { std::to_string(user_id).c_str(), NULL, group.c_str() };
-        std::string query = "INSERT INTO students (id_user, id_career, group_student) VALUES ($1, $2, $3)"; 
+        std::string query = "INSERT INTO students (id_user, id_career_year, group_student) VALUES ($1, $2, $3)"; 
         // Ejecutar la consulta 
         res = PQexecParams(conn_gc, query.c_str(), 3, NULL, paramValues_profesor, NULL, NULL, 0);
 
@@ -380,10 +378,10 @@ namespace GC {
         int career_id = std::stoi(PQgetvalue(res, 0, 0));
         PQclear(res);
 
-        // Insertar en la tabla careers_age
+        // Insertar en la tabla careers_years
         for (int age = 1; age <= duration; ++age) {
-            std::string insert_age_query = "INSERT INTO careers_age (age, id_career) VALUES (" +
-                                        std::to_string(age) + ", " + std::to_string(career_id) + ")";
+            std::string insert_age_query = "INSERT INTO careers_years (id_career, year) VALUES (" +
+                                        std::to_string(career_id) + ", " + std::to_string(age) + ")";
             res = PQexec(conn_gc, insert_age_query.c_str());
             if (PQresultStatus(res) != PGRES_COMMAND_OK) {
                 std::cerr << "Error inserting career age: " << PQerrorMessage(conn_gc) << std::endl;

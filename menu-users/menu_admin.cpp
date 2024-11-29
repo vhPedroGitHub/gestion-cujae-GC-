@@ -130,6 +130,32 @@ void submenu_delete_admin(GC::DBgc *gc_db) {
     }
 }
 
+void submenu_verify_admin(GC::DBgc *gc_db) {
+    while (true) {
+        std::cin.clear(); // Clear the error flag
+        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); // Ignore the invalid input
+
+        std::cout << "1- Verificar asignaturas" << std::endl;
+        std::cout << "2- Verificar carreras" << std::endl;
+        std::cout << "3- Verificar alumnos" << std::endl;
+        std::cout << "4- Ir atras" << std::endl;
+        std::cout << "Elige una opción: ";
+
+        int opcion;
+        std::cin >> opcion;
+
+        if (opcion == 4) break;
+
+        // Aquí puedes agregar la lógica para cada opción
+        switch (opcion) {    
+            case 1:  break;
+            case 2:  break;
+            case 3:  break;
+            default:  break;
+        }
+    }
+}
+
 void menu_admin(USR::User *admin, GC::DBgc *gc_db) {
     std::cout << "Bienvenido " << admin->get_user_name() << std::endl;
     std::cout << "Este es el sistema de gestion CUJAE" << std::endl;

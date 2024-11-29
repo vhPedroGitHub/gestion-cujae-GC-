@@ -13,13 +13,9 @@ namespace USR {
             std::string user_name;
             std::string password;
             int user_type;
-            std::string person_n;
-            std::string last_name_1;
-            std::string last_name_2;
 
         public:
-            User(const int id_user, std::string CI, std::string user_name, std::string password, int user_type, 
-            std::string person_n, std::string last_name_1, std::string last_name_2);
+            User(const int id_user, std::string CI, std::string user_name, std::string password, int user_type);
             ~User();
 
             int get_id_user();
@@ -39,7 +35,6 @@ namespace USR {
 
         public:
             Profesor(int id_user, std::string CI, std::string user_name, std::string password, int user_type,
-            std::string person_n, std::string last_name_1, std::string last_name_2, 
             int id_profesor, int id_deparment, std::string category);
             ~Profesor();
     };
@@ -53,7 +48,6 @@ namespace USR {
 
         public:
             Student(int id_user, std::string CI, std::string user_name, std::string password, int user_type,
-            std::string person_n, std::string last_name_1, std::string last_name_2,
             int id_student, int id_faculty, int id_career, int group);
             ~Student();
     };
