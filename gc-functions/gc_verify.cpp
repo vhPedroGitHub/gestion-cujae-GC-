@@ -141,7 +141,7 @@ namespace GC {
                 std::string id_career_year = selectElement(careers);
 
                 std::string sql = "UPDATE students SET id_career_year = " + id_career_year +
-                      " WHERE id_subject = " + student.getIndice() + ";";
+                      " WHERE id_student = " + student.getIndice() + ";";
 
                 PGresult *res = PQexec(conn_gc, sql.c_str());
 

@@ -425,8 +425,40 @@ namespace GC {
         PQclear(res); // Liberar el resultado
     }
 
-    void DBgc::addStudentImage(std::string directory, std::string id_student){
+    void DBgc::addImage(){
         // en este metodo se le agregara una imagen a un alumno para que pueda ser identificado por una foto
+        // Variables para almacenar los datos del formulario
+        std::string name_img, directory_img = "../sources/face_imgs/";
+        std::string id_user;
+
+        // Simulando la entrada del formulario
+        std::cout << "Ingrese el nombre de la imagen: ";
+        std::getline(std::cin, name_img);
+        directory_img = directory_img + name_img;
+        std::cout << "Ingrese el ID del usuario: ";
+        std::getline(std::cin, id_user);
+
+        // Consulta SQL para insertar datos en la tabla users_images
+        std::string sql = "INSERT INTO users_images (directory_img, id_user) VALUES ($1, $2);";
+
+        const char *paramValues[2] = {directory_img.c_str(), id_user.c_str()};
+
+        // Preparar la consulta
+        PGresult *res = PQexecParams(conn_gc, sql.c_str(),
+                                    2,       // Número de parámetros
+                                    NULL,    // No se utilizan parámetros de tipo
+                                    paramValues,
+                                    NULL, NULL,  // Sin parámetros adicionales
+                                    0);          // Sin formato
+
+        if (PQresultStatus(res) != PGRES_COMMAND_OK) {
+            std::cerr << "Error al insertar datos: " << PQerrorMessage(conn_gc) << std::endl;
+        } else {
+            std::cout << "Datos insertados correctamente." << std::endl;
+        }
+
+        // Limpiar resultados y cerrar conexión
+        PQclear(res);
     }
 }
 

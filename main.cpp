@@ -32,18 +32,18 @@ int main (){
 
                     std::cout << id_user << std::endl;
 
-                    USR::User *admin;
+                    USR::User *user;
+                    user = new USR::User(stoi(id_user), CI, user_name, password, stoi(user_type));
 
                     switch (stoi(user_type)) {
                         case 1:
-                            admin = new USR::User(stoi(id_user), CI, user_name, password, stoi(user_type));
-                            menu_admin(admin, gc_db);
+                            menu_admin(user, gc_db);
                             break;
                         case 2:
-                            std::cout<< "El usuario es un profesor" << std::endl;
+                            menu_profesor(user, gc_db);
                             break;
                         case 3:
-                            std::cout<< "El usuario es un estudiante" << std::endl;
+                            menu_student(user, gc_db);
                             break;
 
                         default:

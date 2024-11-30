@@ -6,6 +6,7 @@
 #include<string>
 #include<vector>
 #include<limits>
+#include "../menu-users/usr.h"
 
 // Aqui se incluira todas las funciones y clases relacionadas con el funcionamiento del programa unido a la base de datos
 namespace GC {
@@ -25,6 +26,8 @@ namespace GC {
 
     std::string selectElement( std::vector<ConsultInd>);
 
+    void clearBufferCin();
+
     class DBgc { // esta clase incluye toda la funcionalidad relacionada con las operaciones en la base de datos
     private:
         PGconn *conn_gc;
@@ -43,7 +46,7 @@ namespace GC {
         void addDeparment();
         void addCareer();
         void addSubject();
-        void addStudentImage(std::string, std::string);
+        void addImage();
 
         // metodos para obtener datos mediante consulta a la base de datos
         PGresult* getUserType_BD(const std::string, const std::string);
@@ -58,8 +61,10 @@ namespace GC {
         void verifiySubject();
         void verifyCareersSubj();
         void verifyStudentsCar();
-    };
 
+        // operaciones realizadas por el profesor
+        void opcprof_passAsistence(USR::User *);
+    };
 
 }
 

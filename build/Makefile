@@ -128,6 +128,30 @@ GC/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\GC.dir\build.make CMakeFiles/GC.dir/build
 .PHONY : GC/fast
 
+gc-functions/complements.obj: gc-functions/complements.cpp.obj
+.PHONY : gc-functions/complements.obj
+
+# target to build an object file
+gc-functions/complements.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GC.dir\build.make CMakeFiles/GC.dir/gc-functions/complements.cpp.obj
+.PHONY : gc-functions/complements.cpp.obj
+
+gc-functions/complements.i: gc-functions/complements.cpp.i
+.PHONY : gc-functions/complements.i
+
+# target to preprocess a source file
+gc-functions/complements.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GC.dir\build.make CMakeFiles/GC.dir/gc-functions/complements.cpp.i
+.PHONY : gc-functions/complements.cpp.i
+
+gc-functions/complements.s: gc-functions/complements.cpp.s
+.PHONY : gc-functions/complements.s
+
+# target to generate assembly for a file
+gc-functions/complements.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GC.dir\build.make CMakeFiles/GC.dir/gc-functions/complements.cpp.s
+.PHONY : gc-functions/complements.cpp.s
+
 gc-functions/consult.obj: gc-functions/consult.cpp.obj
 .PHONY : gc-functions/consult.obj
 
@@ -248,6 +272,30 @@ gc-functions/gc_logic.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\GC.dir\build.make CMakeFiles/GC.dir/gc-functions/gc_logic.cpp.s
 .PHONY : gc-functions/gc_logic.cpp.s
 
+gc-functions/gc_opcprof.obj: gc-functions/gc_opcprof.cpp.obj
+.PHONY : gc-functions/gc_opcprof.obj
+
+# target to build an object file
+gc-functions/gc_opcprof.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GC.dir\build.make CMakeFiles/GC.dir/gc-functions/gc_opcprof.cpp.obj
+.PHONY : gc-functions/gc_opcprof.cpp.obj
+
+gc-functions/gc_opcprof.i: gc-functions/gc_opcprof.cpp.i
+.PHONY : gc-functions/gc_opcprof.i
+
+# target to preprocess a source file
+gc-functions/gc_opcprof.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GC.dir\build.make CMakeFiles/GC.dir/gc-functions/gc_opcprof.cpp.i
+.PHONY : gc-functions/gc_opcprof.cpp.i
+
+gc-functions/gc_opcprof.s: gc-functions/gc_opcprof.cpp.s
+.PHONY : gc-functions/gc_opcprof.s
+
+# target to generate assembly for a file
+gc-functions/gc_opcprof.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GC.dir\build.make CMakeFiles/GC.dir/gc-functions/gc_opcprof.cpp.s
+.PHONY : gc-functions/gc_opcprof.cpp.s
+
 gc-functions/gc_verify.obj: gc-functions/gc_verify.cpp.obj
 .PHONY : gc-functions/gc_verify.obj
 
@@ -296,30 +344,6 @@ main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\GC.dir\build.make CMakeFiles/GC.dir/main.cpp.s
 .PHONY : main.cpp.s
 
-menu-users/menu.obj: menu-users/menu.cpp.obj
-.PHONY : menu-users/menu.obj
-
-# target to build an object file
-menu-users/menu.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\GC.dir\build.make CMakeFiles/GC.dir/menu-users/menu.cpp.obj
-.PHONY : menu-users/menu.cpp.obj
-
-menu-users/menu.i: menu-users/menu.cpp.i
-.PHONY : menu-users/menu.i
-
-# target to preprocess a source file
-menu-users/menu.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\GC.dir\build.make CMakeFiles/GC.dir/menu-users/menu.cpp.i
-.PHONY : menu-users/menu.cpp.i
-
-menu-users/menu.s: menu-users/menu.cpp.s
-.PHONY : menu-users/menu.s
-
-# target to generate assembly for a file
-menu-users/menu.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\GC.dir\build.make CMakeFiles/GC.dir/menu-users/menu.cpp.s
-.PHONY : menu-users/menu.cpp.s
-
 menu-users/menu_admin.obj: menu-users/menu_admin.cpp.obj
 .PHONY : menu-users/menu_admin.obj
 
@@ -343,6 +367,54 @@ menu-users/menu_admin.s: menu-users/menu_admin.cpp.s
 menu-users/menu_admin.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\GC.dir\build.make CMakeFiles/GC.dir/menu-users/menu_admin.cpp.s
 .PHONY : menu-users/menu_admin.cpp.s
+
+menu-users/menu_prof.obj: menu-users/menu_prof.cpp.obj
+.PHONY : menu-users/menu_prof.obj
+
+# target to build an object file
+menu-users/menu_prof.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GC.dir\build.make CMakeFiles/GC.dir/menu-users/menu_prof.cpp.obj
+.PHONY : menu-users/menu_prof.cpp.obj
+
+menu-users/menu_prof.i: menu-users/menu_prof.cpp.i
+.PHONY : menu-users/menu_prof.i
+
+# target to preprocess a source file
+menu-users/menu_prof.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GC.dir\build.make CMakeFiles/GC.dir/menu-users/menu_prof.cpp.i
+.PHONY : menu-users/menu_prof.cpp.i
+
+menu-users/menu_prof.s: menu-users/menu_prof.cpp.s
+.PHONY : menu-users/menu_prof.s
+
+# target to generate assembly for a file
+menu-users/menu_prof.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GC.dir\build.make CMakeFiles/GC.dir/menu-users/menu_prof.cpp.s
+.PHONY : menu-users/menu_prof.cpp.s
+
+menu-users/menu_student.obj: menu-users/menu_student.cpp.obj
+.PHONY : menu-users/menu_student.obj
+
+# target to build an object file
+menu-users/menu_student.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GC.dir\build.make CMakeFiles/GC.dir/menu-users/menu_student.cpp.obj
+.PHONY : menu-users/menu_student.cpp.obj
+
+menu-users/menu_student.i: menu-users/menu_student.cpp.i
+.PHONY : menu-users/menu_student.i
+
+# target to preprocess a source file
+menu-users/menu_student.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GC.dir\build.make CMakeFiles/GC.dir/menu-users/menu_student.cpp.i
+.PHONY : menu-users/menu_student.cpp.i
+
+menu-users/menu_student.s: menu-users/menu_student.cpp.s
+.PHONY : menu-users/menu_student.s
+
+# target to generate assembly for a file
+menu-users/menu_student.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GC.dir\build.make CMakeFiles/GC.dir/menu-users/menu_student.cpp.s
+.PHONY : menu-users/menu_student.cpp.s
 
 menu-users/usr.obj: menu-users/usr.cpp.obj
 .PHONY : menu-users/usr.obj
@@ -377,6 +449,9 @@ help:
 	@echo ... edit_cache
 	@echo ... rebuild_cache
 	@echo ... GC
+	@echo ... gc-functions/complements.obj
+	@echo ... gc-functions/complements.i
+	@echo ... gc-functions/complements.s
 	@echo ... gc-functions/consult.obj
 	@echo ... gc-functions/consult.i
 	@echo ... gc-functions/consult.s
@@ -392,18 +467,24 @@ help:
 	@echo ... gc-functions/gc_logic.obj
 	@echo ... gc-functions/gc_logic.i
 	@echo ... gc-functions/gc_logic.s
+	@echo ... gc-functions/gc_opcprof.obj
+	@echo ... gc-functions/gc_opcprof.i
+	@echo ... gc-functions/gc_opcprof.s
 	@echo ... gc-functions/gc_verify.obj
 	@echo ... gc-functions/gc_verify.i
 	@echo ... gc-functions/gc_verify.s
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s
-	@echo ... menu-users/menu.obj
-	@echo ... menu-users/menu.i
-	@echo ... menu-users/menu.s
 	@echo ... menu-users/menu_admin.obj
 	@echo ... menu-users/menu_admin.i
 	@echo ... menu-users/menu_admin.s
+	@echo ... menu-users/menu_prof.obj
+	@echo ... menu-users/menu_prof.i
+	@echo ... menu-users/menu_prof.s
+	@echo ... menu-users/menu_student.obj
+	@echo ... menu-users/menu_student.i
+	@echo ... menu-users/menu_student.s
 	@echo ... menu-users/usr.obj
 	@echo ... menu-users/usr.i
 	@echo ... menu-users/usr.s

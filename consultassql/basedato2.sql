@@ -2,25 +2,20 @@ CREATE TABLE students (
   id_student SERIAL PRIMARY KEY,
   id_user INTEGER NOT NULL,
   id_career_year INTEGER,
-  group_student INTEGER NOT NULL,
-  FOREIGN KEY (id_user) REFERENCES users (id_user),
-  FOREIGN KEY (id_career_year) REFERENCES careers_years (id_career_year)
+  group_student INTEGER NOT NULL
 );
 
 CREATE TABLE profesors (
   id_profesor SERIAL PRIMARY KEY,
   id_deparment INTEGER NOT NULL,
   id_user INTEGER NOT NULL,
-  category VARCHAR(50),
-  FOREIGN KEY (id_deparment) REFERENCES deparments (id_deparment),
-  FOREIGN KEY (id_user) REFERENCES users (id_user)
+  category VARCHAR(50)
 );
 
 CREATE TABLE subjects (
   id_subject SERIAL PRIMARY KEY,
   id_profesor INTEGER,
-  n_subject TEXT,
-  FOREIGN KEY (id_profesor) REFERENCES profesors (id_profesor)
+  n_subject TEXT
 );
 
 CREATE TABLE faculties (
@@ -32,33 +27,28 @@ CREATE TABLE careers (
   id_career SERIAL PRIMARY KEY,
   id_faculty INTEGER,
   n_career VARCHAR(50) NOT NULL,
-  duration INTEGER NOT NULL,
-  FOREIGN KEY (id_faculty) REFERENCES faculties (id_faculty)
+  duration INTEGER NOT NULL
 );
 
 CREATE TABLE careers_years (
   id_career_year SERIAL PRIMARY KEY,
   id_career INTEGER,
-  year INTEGER NOT NULL,
-  FOREIGN KEY (id_career) REFERENCES careers (id_career)
+  year INTEGER NOT NULL
 );
 
 CREATE TABLE careers_subjects (
   id_career_subject SERIAL PRIMARY KEY,
   id_subject INTEGER,
-  id_career_year INTEGER,
-  FOREIGN KEY (id_subject) REFERENCES subjects (id_subject),
-  FOREIGN KEY (id_career_year) REFERENCES careers_years (id_career_year)
+  id_career_year INTEGER
 );
 
 CREATE TABLE evaluations (
   id_evaluation SERIAL PRIMARY KEY,
-  id_classe INTEGER,
   id_student INTEGER,
+  id_subject INTEGER,
   calification INTEGER,
   evaluation_type VARCHAR(10),
-  FOREIGN KEY (id_classe) REFERENCES classes (id_classe),
-  FOREIGN KEY (id_student) REFERENCES students (id_student)
+  date_eval DATE
 );
 
 CREATE TABLE deparments (
@@ -70,17 +60,14 @@ CREATE TABLE classes (
   id_classe SERIAL PRIMARY KEY,
   id_subject INTEGER,
   cantidad_turnos INTEGER,
-  date_class TIMESTAMP,
-  FOREIGN KEY (id_subject) REFERENCES subjects (id_subject)
+  date_class DATE
 );
 
 CREATE TABLE assistances (
   id_assistance SERIAL PRIMARY KEY,
   id_classe INTEGER,
   id_student INTEGER,
-  assis BOOLEAN,
-  FOREIGN KEY (id_classe) REFERENCES classes (id_classe),
-  FOREIGN KEY (id_student) REFERENCES students (id_student)
+  assis BOOLEAN
 );
 
 CREATE TABLE users (
@@ -101,6 +88,24 @@ CREATE TABLE personal_dates (
 CREATE TABLE users_images (
   id_user_image SERIAL PRIMARY KEY,
   directory_img TEXT NOT NULL,
-  id_user INTEGER NOT NULL,
-  FOREIGN KEY (id_user) REFERENCES users (id_user)
+  id_user INTEGER NOT NULL
 );
+
+-- Agregar claves foráneas usando ALTER TABLE
+
+ALTER TABLE subjects ADD FOREIGN KEY (id_profesor) REFERENCES profesors (id_profesor);
+ALTER TABLE profesors ADD FOREIGN KEY (id_deparment) REFERENCES deparments (id_deparment);
+ALTER TABLE assistances ADD FOREIGN KEY (id_classe) REFERENCES classes (id_classe);
+ALTER TABLE assistances ADD FOREIGN KEY (id_student) REFERENCES students (id_student);
+ALTER TABLE evaluations ADD FOREIGN KEY (id_student) REFERENCES students (id_student);
+ALTER TABLE evaluations ADD FOREIGN KEY (id_subject) REFERENCES subjects (id_subject);
+ALTER TABLE profesors ADD FOREIGN KEY (id_user) REFERENCES users (id_user);
+ALTER TABLE students ADD FOREIGN KEY (id_user) REFERENCES users (id_user);
+ALTER TABLE personal_dates ADD FOREIGN KEY (CI_identity) REFERENCES users (CI_identity);
+ALTER TABLE careers_subjects ADD FOREIGN KEY (id_subject) REFERENCES subjects (id_subject);
+ALTER TABLE careers ADD FOREIGN KEY (id_faculty) REFERENCES faculties (id_faculty);
+ALTER TABLE careers_years ADD FOREIGN KEY (id_career) REFERENCES careers (id_career);
+ALTER TABLE careers_subjects ADD FOREIGN KEY (id_career_year) REFERENCES careers_years (id_career_year);
+ALTER TABLE students ADD FOREIGN KEY (id_career_year) REFERENCES careers_years (id_career_year);
+ALTER TABLE classes ADD FOREIGN KEY (id_subject) REFERENCES subjects (id_subject);
+ALTER TABLE users_images ADD FOREIGN KEY (id_user) REFERENCES users (id_user);

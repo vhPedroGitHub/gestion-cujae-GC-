@@ -83,11 +83,56 @@ CMakeFiles/GC.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/GC.dir/main.cpp.s"
 	C:\TDM-GCC-64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\HP i5-7\Documents\Pedro\ProyectoConvalidacionBasedeDatos\gestion-cujae(GC)\main.cpp" -o CMakeFiles\GC.dir\main.cpp.s
 
+CMakeFiles/GC.dir/gc-functions/complements.cpp.obj: CMakeFiles/GC.dir/flags.make
+CMakeFiles/GC.dir/gc-functions/complements.cpp.obj: CMakeFiles/GC.dir/includes_CXX.rsp
+CMakeFiles/GC.dir/gc-functions/complements.cpp.obj: C:/Users/HP\ i5-7/Documents/Pedro/ProyectoConvalidacionBasedeDatos/gestion-cujae(GC)/gc-functions/complements.cpp
+CMakeFiles/GC.dir/gc-functions/complements.cpp.obj: CMakeFiles/GC.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\Users\HP i5-7\Documents\Pedro\ProyectoConvalidacionBasedeDatos\gestion-cujae(GC)\build\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/GC.dir/gc-functions/complements.cpp.obj"
+	C:\TDM-GCC-64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/GC.dir/gc-functions/complements.cpp.obj -MF CMakeFiles\GC.dir\gc-functions\complements.cpp.obj.d -o CMakeFiles\GC.dir\gc-functions\complements.cpp.obj -c "C:\Users\HP i5-7\Documents\Pedro\ProyectoConvalidacionBasedeDatos\gestion-cujae(GC)\gc-functions\complements.cpp"
+
+CMakeFiles/GC.dir/gc-functions/complements.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/GC.dir/gc-functions/complements.cpp.i"
+	C:\TDM-GCC-64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\HP i5-7\Documents\Pedro\ProyectoConvalidacionBasedeDatos\gestion-cujae(GC)\gc-functions\complements.cpp" > CMakeFiles\GC.dir\gc-functions\complements.cpp.i
+
+CMakeFiles/GC.dir/gc-functions/complements.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/GC.dir/gc-functions/complements.cpp.s"
+	C:\TDM-GCC-64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\HP i5-7\Documents\Pedro\ProyectoConvalidacionBasedeDatos\gestion-cujae(GC)\gc-functions\complements.cpp" -o CMakeFiles\GC.dir\gc-functions\complements.cpp.s
+
+CMakeFiles/GC.dir/gc-functions/consult.cpp.obj: CMakeFiles/GC.dir/flags.make
+CMakeFiles/GC.dir/gc-functions/consult.cpp.obj: CMakeFiles/GC.dir/includes_CXX.rsp
+CMakeFiles/GC.dir/gc-functions/consult.cpp.obj: C:/Users/HP\ i5-7/Documents/Pedro/ProyectoConvalidacionBasedeDatos/gestion-cujae(GC)/gc-functions/consult.cpp
+CMakeFiles/GC.dir/gc-functions/consult.cpp.obj: CMakeFiles/GC.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\Users\HP i5-7\Documents\Pedro\ProyectoConvalidacionBasedeDatos\gestion-cujae(GC)\build\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/GC.dir/gc-functions/consult.cpp.obj"
+	C:\TDM-GCC-64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/GC.dir/gc-functions/consult.cpp.obj -MF CMakeFiles\GC.dir\gc-functions\consult.cpp.obj.d -o CMakeFiles\GC.dir\gc-functions\consult.cpp.obj -c "C:\Users\HP i5-7\Documents\Pedro\ProyectoConvalidacionBasedeDatos\gestion-cujae(GC)\gc-functions\consult.cpp"
+
+CMakeFiles/GC.dir/gc-functions/consult.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/GC.dir/gc-functions/consult.cpp.i"
+	C:\TDM-GCC-64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\HP i5-7\Documents\Pedro\ProyectoConvalidacionBasedeDatos\gestion-cujae(GC)\gc-functions\consult.cpp" > CMakeFiles\GC.dir\gc-functions\consult.cpp.i
+
+CMakeFiles/GC.dir/gc-functions/consult.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/GC.dir/gc-functions/consult.cpp.s"
+	C:\TDM-GCC-64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\HP i5-7\Documents\Pedro\ProyectoConvalidacionBasedeDatos\gestion-cujae(GC)\gc-functions\consult.cpp" -o CMakeFiles\GC.dir\gc-functions\consult.cpp.s
+
+CMakeFiles/GC.dir/gc-functions/gc_getinfo.cpp.obj: CMakeFiles/GC.dir/flags.make
+CMakeFiles/GC.dir/gc-functions/gc_getinfo.cpp.obj: CMakeFiles/GC.dir/includes_CXX.rsp
+CMakeFiles/GC.dir/gc-functions/gc_getinfo.cpp.obj: C:/Users/HP\ i5-7/Documents/Pedro/ProyectoConvalidacionBasedeDatos/gestion-cujae(GC)/gc-functions/gc_getinfo.cpp
+CMakeFiles/GC.dir/gc-functions/gc_getinfo.cpp.obj: CMakeFiles/GC.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\Users\HP i5-7\Documents\Pedro\ProyectoConvalidacionBasedeDatos\gestion-cujae(GC)\build\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/GC.dir/gc-functions/gc_getinfo.cpp.obj"
+	C:\TDM-GCC-64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/GC.dir/gc-functions/gc_getinfo.cpp.obj -MF CMakeFiles\GC.dir\gc-functions\gc_getinfo.cpp.obj.d -o CMakeFiles\GC.dir\gc-functions\gc_getinfo.cpp.obj -c "C:\Users\HP i5-7\Documents\Pedro\ProyectoConvalidacionBasedeDatos\gestion-cujae(GC)\gc-functions\gc_getinfo.cpp"
+
+CMakeFiles/GC.dir/gc-functions/gc_getinfo.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/GC.dir/gc-functions/gc_getinfo.cpp.i"
+	C:\TDM-GCC-64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\HP i5-7\Documents\Pedro\ProyectoConvalidacionBasedeDatos\gestion-cujae(GC)\gc-functions\gc_getinfo.cpp" > CMakeFiles\GC.dir\gc-functions\gc_getinfo.cpp.i
+
+CMakeFiles/GC.dir/gc-functions/gc_getinfo.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/GC.dir/gc-functions/gc_getinfo.cpp.s"
+	C:\TDM-GCC-64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\HP i5-7\Documents\Pedro\ProyectoConvalidacionBasedeDatos\gestion-cujae(GC)\gc-functions\gc_getinfo.cpp" -o CMakeFiles\GC.dir\gc-functions\gc_getinfo.cpp.s
+
 CMakeFiles/GC.dir/gc-functions/gc_init.cpp.obj: CMakeFiles/GC.dir/flags.make
 CMakeFiles/GC.dir/gc-functions/gc_init.cpp.obj: CMakeFiles/GC.dir/includes_CXX.rsp
 CMakeFiles/GC.dir/gc-functions/gc_init.cpp.obj: C:/Users/HP\ i5-7/Documents/Pedro/ProyectoConvalidacionBasedeDatos/gestion-cujae(GC)/gc-functions/gc_init.cpp
 CMakeFiles/GC.dir/gc-functions/gc_init.cpp.obj: CMakeFiles/GC.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\Users\HP i5-7\Documents\Pedro\ProyectoConvalidacionBasedeDatos\gestion-cujae(GC)\build\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/GC.dir/gc-functions/gc_init.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\Users\HP i5-7\Documents\Pedro\ProyectoConvalidacionBasedeDatos\gestion-cujae(GC)\build\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/GC.dir/gc-functions/gc_init.cpp.obj"
 	C:\TDM-GCC-64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/GC.dir/gc-functions/gc_init.cpp.obj -MF CMakeFiles\GC.dir\gc-functions\gc_init.cpp.obj.d -o CMakeFiles\GC.dir\gc-functions\gc_init.cpp.obj -c "C:\Users\HP i5-7\Documents\Pedro\ProyectoConvalidacionBasedeDatos\gestion-cujae(GC)\gc-functions\gc_init.cpp"
 
 CMakeFiles/GC.dir/gc-functions/gc_init.cpp.i: cmake_force
@@ -102,7 +147,7 @@ CMakeFiles/GC.dir/gc-functions/gc_insert.cpp.obj: CMakeFiles/GC.dir/flags.make
 CMakeFiles/GC.dir/gc-functions/gc_insert.cpp.obj: CMakeFiles/GC.dir/includes_CXX.rsp
 CMakeFiles/GC.dir/gc-functions/gc_insert.cpp.obj: C:/Users/HP\ i5-7/Documents/Pedro/ProyectoConvalidacionBasedeDatos/gestion-cujae(GC)/gc-functions/gc_insert.cpp
 CMakeFiles/GC.dir/gc-functions/gc_insert.cpp.obj: CMakeFiles/GC.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\Users\HP i5-7\Documents\Pedro\ProyectoConvalidacionBasedeDatos\gestion-cujae(GC)\build\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/GC.dir/gc-functions/gc_insert.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\Users\HP i5-7\Documents\Pedro\ProyectoConvalidacionBasedeDatos\gestion-cujae(GC)\build\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/GC.dir/gc-functions/gc_insert.cpp.obj"
 	C:\TDM-GCC-64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/GC.dir/gc-functions/gc_insert.cpp.obj -MF CMakeFiles\GC.dir\gc-functions\gc_insert.cpp.obj.d -o CMakeFiles\GC.dir\gc-functions\gc_insert.cpp.obj -c "C:\Users\HP i5-7\Documents\Pedro\ProyectoConvalidacionBasedeDatos\gestion-cujae(GC)\gc-functions\gc_insert.cpp"
 
 CMakeFiles/GC.dir/gc-functions/gc_insert.cpp.i: cmake_force
@@ -117,7 +162,7 @@ CMakeFiles/GC.dir/gc-functions/gc_logic.cpp.obj: CMakeFiles/GC.dir/flags.make
 CMakeFiles/GC.dir/gc-functions/gc_logic.cpp.obj: CMakeFiles/GC.dir/includes_CXX.rsp
 CMakeFiles/GC.dir/gc-functions/gc_logic.cpp.obj: C:/Users/HP\ i5-7/Documents/Pedro/ProyectoConvalidacionBasedeDatos/gestion-cujae(GC)/gc-functions/gc_logic.cpp
 CMakeFiles/GC.dir/gc-functions/gc_logic.cpp.obj: CMakeFiles/GC.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\Users\HP i5-7\Documents\Pedro\ProyectoConvalidacionBasedeDatos\gestion-cujae(GC)\build\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/GC.dir/gc-functions/gc_logic.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\Users\HP i5-7\Documents\Pedro\ProyectoConvalidacionBasedeDatos\gestion-cujae(GC)\build\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/GC.dir/gc-functions/gc_logic.cpp.obj"
 	C:\TDM-GCC-64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/GC.dir/gc-functions/gc_logic.cpp.obj -MF CMakeFiles\GC.dir\gc-functions\gc_logic.cpp.obj.d -o CMakeFiles\GC.dir\gc-functions\gc_logic.cpp.obj -c "C:\Users\HP i5-7\Documents\Pedro\ProyectoConvalidacionBasedeDatos\gestion-cujae(GC)\gc-functions\gc_logic.cpp"
 
 CMakeFiles/GC.dir/gc-functions/gc_logic.cpp.i: cmake_force
@@ -128,41 +173,26 @@ CMakeFiles/GC.dir/gc-functions/gc_logic.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/GC.dir/gc-functions/gc_logic.cpp.s"
 	C:\TDM-GCC-64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\HP i5-7\Documents\Pedro\ProyectoConvalidacionBasedeDatos\gestion-cujae(GC)\gc-functions\gc_logic.cpp" -o CMakeFiles\GC.dir\gc-functions\gc_logic.cpp.s
 
-CMakeFiles/GC.dir/gc-functions/gc_getinfo.cpp.obj: CMakeFiles/GC.dir/flags.make
-CMakeFiles/GC.dir/gc-functions/gc_getinfo.cpp.obj: CMakeFiles/GC.dir/includes_CXX.rsp
-CMakeFiles/GC.dir/gc-functions/gc_getinfo.cpp.obj: C:/Users/HP\ i5-7/Documents/Pedro/ProyectoConvalidacionBasedeDatos/gestion-cujae(GC)/gc-functions/gc_getinfo.cpp
-CMakeFiles/GC.dir/gc-functions/gc_getinfo.cpp.obj: CMakeFiles/GC.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\Users\HP i5-7\Documents\Pedro\ProyectoConvalidacionBasedeDatos\gestion-cujae(GC)\build\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/GC.dir/gc-functions/gc_getinfo.cpp.obj"
-	C:\TDM-GCC-64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/GC.dir/gc-functions/gc_getinfo.cpp.obj -MF CMakeFiles\GC.dir\gc-functions\gc_getinfo.cpp.obj.d -o CMakeFiles\GC.dir\gc-functions\gc_getinfo.cpp.obj -c "C:\Users\HP i5-7\Documents\Pedro\ProyectoConvalidacionBasedeDatos\gestion-cujae(GC)\gc-functions\gc_getinfo.cpp"
+CMakeFiles/GC.dir/gc-functions/gc_opcprof.cpp.obj: CMakeFiles/GC.dir/flags.make
+CMakeFiles/GC.dir/gc-functions/gc_opcprof.cpp.obj: CMakeFiles/GC.dir/includes_CXX.rsp
+CMakeFiles/GC.dir/gc-functions/gc_opcprof.cpp.obj: C:/Users/HP\ i5-7/Documents/Pedro/ProyectoConvalidacionBasedeDatos/gestion-cujae(GC)/gc-functions/gc_opcprof.cpp
+CMakeFiles/GC.dir/gc-functions/gc_opcprof.cpp.obj: CMakeFiles/GC.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\Users\HP i5-7\Documents\Pedro\ProyectoConvalidacionBasedeDatos\gestion-cujae(GC)\build\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/GC.dir/gc-functions/gc_opcprof.cpp.obj"
+	C:\TDM-GCC-64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/GC.dir/gc-functions/gc_opcprof.cpp.obj -MF CMakeFiles\GC.dir\gc-functions\gc_opcprof.cpp.obj.d -o CMakeFiles\GC.dir\gc-functions\gc_opcprof.cpp.obj -c "C:\Users\HP i5-7\Documents\Pedro\ProyectoConvalidacionBasedeDatos\gestion-cujae(GC)\gc-functions\gc_opcprof.cpp"
 
-CMakeFiles/GC.dir/gc-functions/gc_getinfo.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/GC.dir/gc-functions/gc_getinfo.cpp.i"
-	C:\TDM-GCC-64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\HP i5-7\Documents\Pedro\ProyectoConvalidacionBasedeDatos\gestion-cujae(GC)\gc-functions\gc_getinfo.cpp" > CMakeFiles\GC.dir\gc-functions\gc_getinfo.cpp.i
+CMakeFiles/GC.dir/gc-functions/gc_opcprof.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/GC.dir/gc-functions/gc_opcprof.cpp.i"
+	C:\TDM-GCC-64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\HP i5-7\Documents\Pedro\ProyectoConvalidacionBasedeDatos\gestion-cujae(GC)\gc-functions\gc_opcprof.cpp" > CMakeFiles\GC.dir\gc-functions\gc_opcprof.cpp.i
 
-CMakeFiles/GC.dir/gc-functions/gc_getinfo.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/GC.dir/gc-functions/gc_getinfo.cpp.s"
-	C:\TDM-GCC-64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\HP i5-7\Documents\Pedro\ProyectoConvalidacionBasedeDatos\gestion-cujae(GC)\gc-functions\gc_getinfo.cpp" -o CMakeFiles\GC.dir\gc-functions\gc_getinfo.cpp.s
-
-CMakeFiles/GC.dir/gc-functions/consult.cpp.obj: CMakeFiles/GC.dir/flags.make
-CMakeFiles/GC.dir/gc-functions/consult.cpp.obj: CMakeFiles/GC.dir/includes_CXX.rsp
-CMakeFiles/GC.dir/gc-functions/consult.cpp.obj: C:/Users/HP\ i5-7/Documents/Pedro/ProyectoConvalidacionBasedeDatos/gestion-cujae(GC)/gc-functions/consult.cpp
-CMakeFiles/GC.dir/gc-functions/consult.cpp.obj: CMakeFiles/GC.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\Users\HP i5-7\Documents\Pedro\ProyectoConvalidacionBasedeDatos\gestion-cujae(GC)\build\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/GC.dir/gc-functions/consult.cpp.obj"
-	C:\TDM-GCC-64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/GC.dir/gc-functions/consult.cpp.obj -MF CMakeFiles\GC.dir\gc-functions\consult.cpp.obj.d -o CMakeFiles\GC.dir\gc-functions\consult.cpp.obj -c "C:\Users\HP i5-7\Documents\Pedro\ProyectoConvalidacionBasedeDatos\gestion-cujae(GC)\gc-functions\consult.cpp"
-
-CMakeFiles/GC.dir/gc-functions/consult.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/GC.dir/gc-functions/consult.cpp.i"
-	C:\TDM-GCC-64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\HP i5-7\Documents\Pedro\ProyectoConvalidacionBasedeDatos\gestion-cujae(GC)\gc-functions\consult.cpp" > CMakeFiles\GC.dir\gc-functions\consult.cpp.i
-
-CMakeFiles/GC.dir/gc-functions/consult.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/GC.dir/gc-functions/consult.cpp.s"
-	C:\TDM-GCC-64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\HP i5-7\Documents\Pedro\ProyectoConvalidacionBasedeDatos\gestion-cujae(GC)\gc-functions\consult.cpp" -o CMakeFiles\GC.dir\gc-functions\consult.cpp.s
+CMakeFiles/GC.dir/gc-functions/gc_opcprof.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/GC.dir/gc-functions/gc_opcprof.cpp.s"
+	C:\TDM-GCC-64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\HP i5-7\Documents\Pedro\ProyectoConvalidacionBasedeDatos\gestion-cujae(GC)\gc-functions\gc_opcprof.cpp" -o CMakeFiles\GC.dir\gc-functions\gc_opcprof.cpp.s
 
 CMakeFiles/GC.dir/gc-functions/gc_verify.cpp.obj: CMakeFiles/GC.dir/flags.make
 CMakeFiles/GC.dir/gc-functions/gc_verify.cpp.obj: CMakeFiles/GC.dir/includes_CXX.rsp
 CMakeFiles/GC.dir/gc-functions/gc_verify.cpp.obj: C:/Users/HP\ i5-7/Documents/Pedro/ProyectoConvalidacionBasedeDatos/gestion-cujae(GC)/gc-functions/gc_verify.cpp
 CMakeFiles/GC.dir/gc-functions/gc_verify.cpp.obj: CMakeFiles/GC.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\Users\HP i5-7\Documents\Pedro\ProyectoConvalidacionBasedeDatos\gestion-cujae(GC)\build\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/GC.dir/gc-functions/gc_verify.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\Users\HP i5-7\Documents\Pedro\ProyectoConvalidacionBasedeDatos\gestion-cujae(GC)\build\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/GC.dir/gc-functions/gc_verify.cpp.obj"
 	C:\TDM-GCC-64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/GC.dir/gc-functions/gc_verify.cpp.obj -MF CMakeFiles\GC.dir\gc-functions\gc_verify.cpp.obj.d -o CMakeFiles\GC.dir\gc-functions\gc_verify.cpp.obj -c "C:\Users\HP i5-7\Documents\Pedro\ProyectoConvalidacionBasedeDatos\gestion-cujae(GC)\gc-functions\gc_verify.cpp"
 
 CMakeFiles/GC.dir/gc-functions/gc_verify.cpp.i: cmake_force
@@ -173,26 +203,11 @@ CMakeFiles/GC.dir/gc-functions/gc_verify.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/GC.dir/gc-functions/gc_verify.cpp.s"
 	C:\TDM-GCC-64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\HP i5-7\Documents\Pedro\ProyectoConvalidacionBasedeDatos\gestion-cujae(GC)\gc-functions\gc_verify.cpp" -o CMakeFiles\GC.dir\gc-functions\gc_verify.cpp.s
 
-CMakeFiles/GC.dir/menu-users/menu.cpp.obj: CMakeFiles/GC.dir/flags.make
-CMakeFiles/GC.dir/menu-users/menu.cpp.obj: CMakeFiles/GC.dir/includes_CXX.rsp
-CMakeFiles/GC.dir/menu-users/menu.cpp.obj: C:/Users/HP\ i5-7/Documents/Pedro/ProyectoConvalidacionBasedeDatos/gestion-cujae(GC)/menu-users/menu.cpp
-CMakeFiles/GC.dir/menu-users/menu.cpp.obj: CMakeFiles/GC.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\Users\HP i5-7\Documents\Pedro\ProyectoConvalidacionBasedeDatos\gestion-cujae(GC)\build\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/GC.dir/menu-users/menu.cpp.obj"
-	C:\TDM-GCC-64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/GC.dir/menu-users/menu.cpp.obj -MF CMakeFiles\GC.dir\menu-users\menu.cpp.obj.d -o CMakeFiles\GC.dir\menu-users\menu.cpp.obj -c "C:\Users\HP i5-7\Documents\Pedro\ProyectoConvalidacionBasedeDatos\gestion-cujae(GC)\menu-users\menu.cpp"
-
-CMakeFiles/GC.dir/menu-users/menu.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/GC.dir/menu-users/menu.cpp.i"
-	C:\TDM-GCC-64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\HP i5-7\Documents\Pedro\ProyectoConvalidacionBasedeDatos\gestion-cujae(GC)\menu-users\menu.cpp" > CMakeFiles\GC.dir\menu-users\menu.cpp.i
-
-CMakeFiles/GC.dir/menu-users/menu.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/GC.dir/menu-users/menu.cpp.s"
-	C:\TDM-GCC-64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\HP i5-7\Documents\Pedro\ProyectoConvalidacionBasedeDatos\gestion-cujae(GC)\menu-users\menu.cpp" -o CMakeFiles\GC.dir\menu-users\menu.cpp.s
-
 CMakeFiles/GC.dir/menu-users/menu_admin.cpp.obj: CMakeFiles/GC.dir/flags.make
 CMakeFiles/GC.dir/menu-users/menu_admin.cpp.obj: CMakeFiles/GC.dir/includes_CXX.rsp
 CMakeFiles/GC.dir/menu-users/menu_admin.cpp.obj: C:/Users/HP\ i5-7/Documents/Pedro/ProyectoConvalidacionBasedeDatos/gestion-cujae(GC)/menu-users/menu_admin.cpp
 CMakeFiles/GC.dir/menu-users/menu_admin.cpp.obj: CMakeFiles/GC.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\Users\HP i5-7\Documents\Pedro\ProyectoConvalidacionBasedeDatos\gestion-cujae(GC)\build\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/GC.dir/menu-users/menu_admin.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\Users\HP i5-7\Documents\Pedro\ProyectoConvalidacionBasedeDatos\gestion-cujae(GC)\build\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/GC.dir/menu-users/menu_admin.cpp.obj"
 	C:\TDM-GCC-64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/GC.dir/menu-users/menu_admin.cpp.obj -MF CMakeFiles\GC.dir\menu-users\menu_admin.cpp.obj.d -o CMakeFiles\GC.dir\menu-users\menu_admin.cpp.obj -c "C:\Users\HP i5-7\Documents\Pedro\ProyectoConvalidacionBasedeDatos\gestion-cujae(GC)\menu-users\menu_admin.cpp"
 
 CMakeFiles/GC.dir/menu-users/menu_admin.cpp.i: cmake_force
@@ -203,11 +218,41 @@ CMakeFiles/GC.dir/menu-users/menu_admin.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/GC.dir/menu-users/menu_admin.cpp.s"
 	C:\TDM-GCC-64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\HP i5-7\Documents\Pedro\ProyectoConvalidacionBasedeDatos\gestion-cujae(GC)\menu-users\menu_admin.cpp" -o CMakeFiles\GC.dir\menu-users\menu_admin.cpp.s
 
+CMakeFiles/GC.dir/menu-users/menu_prof.cpp.obj: CMakeFiles/GC.dir/flags.make
+CMakeFiles/GC.dir/menu-users/menu_prof.cpp.obj: CMakeFiles/GC.dir/includes_CXX.rsp
+CMakeFiles/GC.dir/menu-users/menu_prof.cpp.obj: C:/Users/HP\ i5-7/Documents/Pedro/ProyectoConvalidacionBasedeDatos/gestion-cujae(GC)/menu-users/menu_prof.cpp
+CMakeFiles/GC.dir/menu-users/menu_prof.cpp.obj: CMakeFiles/GC.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\Users\HP i5-7\Documents\Pedro\ProyectoConvalidacionBasedeDatos\gestion-cujae(GC)\build\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/GC.dir/menu-users/menu_prof.cpp.obj"
+	C:\TDM-GCC-64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/GC.dir/menu-users/menu_prof.cpp.obj -MF CMakeFiles\GC.dir\menu-users\menu_prof.cpp.obj.d -o CMakeFiles\GC.dir\menu-users\menu_prof.cpp.obj -c "C:\Users\HP i5-7\Documents\Pedro\ProyectoConvalidacionBasedeDatos\gestion-cujae(GC)\menu-users\menu_prof.cpp"
+
+CMakeFiles/GC.dir/menu-users/menu_prof.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/GC.dir/menu-users/menu_prof.cpp.i"
+	C:\TDM-GCC-64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\HP i5-7\Documents\Pedro\ProyectoConvalidacionBasedeDatos\gestion-cujae(GC)\menu-users\menu_prof.cpp" > CMakeFiles\GC.dir\menu-users\menu_prof.cpp.i
+
+CMakeFiles/GC.dir/menu-users/menu_prof.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/GC.dir/menu-users/menu_prof.cpp.s"
+	C:\TDM-GCC-64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\HP i5-7\Documents\Pedro\ProyectoConvalidacionBasedeDatos\gestion-cujae(GC)\menu-users\menu_prof.cpp" -o CMakeFiles\GC.dir\menu-users\menu_prof.cpp.s
+
+CMakeFiles/GC.dir/menu-users/menu_student.cpp.obj: CMakeFiles/GC.dir/flags.make
+CMakeFiles/GC.dir/menu-users/menu_student.cpp.obj: CMakeFiles/GC.dir/includes_CXX.rsp
+CMakeFiles/GC.dir/menu-users/menu_student.cpp.obj: C:/Users/HP\ i5-7/Documents/Pedro/ProyectoConvalidacionBasedeDatos/gestion-cujae(GC)/menu-users/menu_student.cpp
+CMakeFiles/GC.dir/menu-users/menu_student.cpp.obj: CMakeFiles/GC.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\Users\HP i5-7\Documents\Pedro\ProyectoConvalidacionBasedeDatos\gestion-cujae(GC)\build\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/GC.dir/menu-users/menu_student.cpp.obj"
+	C:\TDM-GCC-64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/GC.dir/menu-users/menu_student.cpp.obj -MF CMakeFiles\GC.dir\menu-users\menu_student.cpp.obj.d -o CMakeFiles\GC.dir\menu-users\menu_student.cpp.obj -c "C:\Users\HP i5-7\Documents\Pedro\ProyectoConvalidacionBasedeDatos\gestion-cujae(GC)\menu-users\menu_student.cpp"
+
+CMakeFiles/GC.dir/menu-users/menu_student.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/GC.dir/menu-users/menu_student.cpp.i"
+	C:\TDM-GCC-64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\HP i5-7\Documents\Pedro\ProyectoConvalidacionBasedeDatos\gestion-cujae(GC)\menu-users\menu_student.cpp" > CMakeFiles\GC.dir\menu-users\menu_student.cpp.i
+
+CMakeFiles/GC.dir/menu-users/menu_student.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/GC.dir/menu-users/menu_student.cpp.s"
+	C:\TDM-GCC-64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\HP i5-7\Documents\Pedro\ProyectoConvalidacionBasedeDatos\gestion-cujae(GC)\menu-users\menu_student.cpp" -o CMakeFiles\GC.dir\menu-users\menu_student.cpp.s
+
 CMakeFiles/GC.dir/menu-users/usr.cpp.obj: CMakeFiles/GC.dir/flags.make
 CMakeFiles/GC.dir/menu-users/usr.cpp.obj: CMakeFiles/GC.dir/includes_CXX.rsp
 CMakeFiles/GC.dir/menu-users/usr.cpp.obj: C:/Users/HP\ i5-7/Documents/Pedro/ProyectoConvalidacionBasedeDatos/gestion-cujae(GC)/menu-users/usr.cpp
 CMakeFiles/GC.dir/menu-users/usr.cpp.obj: CMakeFiles/GC.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\Users\HP i5-7\Documents\Pedro\ProyectoConvalidacionBasedeDatos\gestion-cujae(GC)\build\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/GC.dir/menu-users/usr.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\Users\HP i5-7\Documents\Pedro\ProyectoConvalidacionBasedeDatos\gestion-cujae(GC)\build\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/GC.dir/menu-users/usr.cpp.obj"
 	C:\TDM-GCC-64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/GC.dir/menu-users/usr.cpp.obj -MF CMakeFiles\GC.dir\menu-users\usr.cpp.obj.d -o CMakeFiles\GC.dir\menu-users\usr.cpp.obj -c "C:\Users\HP i5-7\Documents\Pedro\ProyectoConvalidacionBasedeDatos\gestion-cujae(GC)\menu-users\usr.cpp"
 
 CMakeFiles/GC.dir/menu-users/usr.cpp.i: cmake_force
@@ -221,35 +266,41 @@ CMakeFiles/GC.dir/menu-users/usr.cpp.s: cmake_force
 # Object files for target GC
 GC_OBJECTS = \
 "CMakeFiles/GC.dir/main.cpp.obj" \
+"CMakeFiles/GC.dir/gc-functions/complements.cpp.obj" \
+"CMakeFiles/GC.dir/gc-functions/consult.cpp.obj" \
+"CMakeFiles/GC.dir/gc-functions/gc_getinfo.cpp.obj" \
 "CMakeFiles/GC.dir/gc-functions/gc_init.cpp.obj" \
 "CMakeFiles/GC.dir/gc-functions/gc_insert.cpp.obj" \
 "CMakeFiles/GC.dir/gc-functions/gc_logic.cpp.obj" \
-"CMakeFiles/GC.dir/gc-functions/gc_getinfo.cpp.obj" \
-"CMakeFiles/GC.dir/gc-functions/consult.cpp.obj" \
+"CMakeFiles/GC.dir/gc-functions/gc_opcprof.cpp.obj" \
 "CMakeFiles/GC.dir/gc-functions/gc_verify.cpp.obj" \
-"CMakeFiles/GC.dir/menu-users/menu.cpp.obj" \
 "CMakeFiles/GC.dir/menu-users/menu_admin.cpp.obj" \
+"CMakeFiles/GC.dir/menu-users/menu_prof.cpp.obj" \
+"CMakeFiles/GC.dir/menu-users/menu_student.cpp.obj" \
 "CMakeFiles/GC.dir/menu-users/usr.cpp.obj"
 
 # External object files for target GC
 GC_EXTERNAL_OBJECTS =
 
 GC.exe: CMakeFiles/GC.dir/main.cpp.obj
+GC.exe: CMakeFiles/GC.dir/gc-functions/complements.cpp.obj
+GC.exe: CMakeFiles/GC.dir/gc-functions/consult.cpp.obj
+GC.exe: CMakeFiles/GC.dir/gc-functions/gc_getinfo.cpp.obj
 GC.exe: CMakeFiles/GC.dir/gc-functions/gc_init.cpp.obj
 GC.exe: CMakeFiles/GC.dir/gc-functions/gc_insert.cpp.obj
 GC.exe: CMakeFiles/GC.dir/gc-functions/gc_logic.cpp.obj
-GC.exe: CMakeFiles/GC.dir/gc-functions/gc_getinfo.cpp.obj
-GC.exe: CMakeFiles/GC.dir/gc-functions/consult.cpp.obj
+GC.exe: CMakeFiles/GC.dir/gc-functions/gc_opcprof.cpp.obj
 GC.exe: CMakeFiles/GC.dir/gc-functions/gc_verify.cpp.obj
-GC.exe: CMakeFiles/GC.dir/menu-users/menu.cpp.obj
 GC.exe: CMakeFiles/GC.dir/menu-users/menu_admin.cpp.obj
+GC.exe: CMakeFiles/GC.dir/menu-users/menu_prof.cpp.obj
+GC.exe: CMakeFiles/GC.dir/menu-users/menu_student.cpp.obj
 GC.exe: CMakeFiles/GC.dir/menu-users/usr.cpp.obj
 GC.exe: CMakeFiles/GC.dir/build.make
 GC.exe: C:/Program\ Files/PostgreSQL/14/lib/libpq.lib
 GC.exe: CMakeFiles/GC.dir/linkLibs.rsp
 GC.exe: CMakeFiles/GC.dir/objects1.rsp
 GC.exe: CMakeFiles/GC.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir="C:\Users\HP i5-7\Documents\Pedro\ProyectoConvalidacionBasedeDatos\gestion-cujae(GC)\build\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_11) "Linking CXX executable GC.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir="C:\Users\HP i5-7\Documents\Pedro\ProyectoConvalidacionBasedeDatos\gestion-cujae(GC)\build\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_14) "Linking CXX executable GC.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\GC.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

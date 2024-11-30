@@ -33,3 +33,9 @@ SELECT * FROM students WHERE id_career_year IS NULL;
 
 SELECT id_career_year, n_career, year FROM careers_years cy
 INNER JOIN careers cr ON cy.id_career=cr.id_career;
+
+SELECT pr.id_profesor, id_subject, n_subject FROM profesors pr
+INNER JOIN subjects s ON pr.id_profesor=s.id_profesor;
+
+SELECT u.id_user FROM users u 
+INNER JOIN profesors pr ON pr.id_user=u.id_user

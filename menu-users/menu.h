@@ -15,7 +15,7 @@ Todos los formuliarios que se utilizaran, los menus iterativos para cada usuario
 #include <limits> 
 
 void menu_admin(USR::User *, GC::DBgc *);
-void menu_profesor(USR::Profesor *, GC::DBgc *);
-void menu_student(USR::Student *, GC::DBgc *);
+void menu_profesor(USR::User *, GC::DBgc *);
+void menu_student(USR::User *, GC::DBgc *);
 
 #endif // MENU
