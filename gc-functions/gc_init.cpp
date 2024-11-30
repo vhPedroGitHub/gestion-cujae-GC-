@@ -124,14 +124,9 @@ namespace GC {
             CREATE TABLE classes (
             id_classe SERIAL PRIMARY KEY,
             id_subject INTEGER,
-            cantidad_turnos INTEGER,
-            date_class DATE
-            );
-
-            CREATE TABLE assistances (
-            id_assistance SERIAL PRIMARY KEY,
-            id_classe INTEGER,
             id_student INTEGER,
+            cantidad_turnos INTEGER,
+            date_class DATE,
             assis BOOLEAN
             );
 
@@ -156,14 +151,9 @@ namespace GC {
             id_user INTEGER NOT NULL
             );
 
-            -- Agregar claves foráneas usando ALTER TABLE
-
             ALTER TABLE subjects ADD FOREIGN KEY (id_profesor) REFERENCES profesors (id_profesor);
             ALTER TABLE profesors ADD FOREIGN KEY (id_deparment) REFERENCES deparments (id_deparment);
-            ALTER TABLE assistances ADD FOREIGN KEY (id_classe) REFERENCES classes (id_classe);
-            ALTER TABLE assistances ADD FOREIGN KEY (id_student) REFERENCES students (id_student);
             ALTER TABLE evaluations ADD FOREIGN KEY (id_student) REFERENCES students (id_student);
-            ALTER TABLE evaluations ADD FOREIGN KEY (id_subject) REFERENCES subjects (id_subject);
             ALTER TABLE profesors ADD FOREIGN KEY (id_user) REFERENCES users (id_user);
             ALTER TABLE students ADD FOREIGN KEY (id_user) REFERENCES users (id_user);
             ALTER TABLE personal_dates ADD FOREIGN KEY (CI_identity) REFERENCES users (CI_identity);
@@ -174,6 +164,75 @@ namespace GC {
             ALTER TABLE students ADD FOREIGN KEY (id_career_year) REFERENCES careers_years (id_career_year);
             ALTER TABLE classes ADD FOREIGN KEY (id_subject) REFERENCES subjects (id_subject);
             ALTER TABLE users_images ADD FOREIGN KEY (id_user) REFERENCES users (id_user);
+            ALTER TABLE evaluations ADD FOREIGN KEY (id_subject) REFERENCES subjects (id_subject);
+            ALTER TABLE classes ADD FOREIGN KEY (id_student) REFERENCES students (id_student);
+
+            CREATE VIEW view_info_pers_student AS 
+            SELECT 
+                s.id_student, 
+                u.id_user, 
+                pd.person_n, 
+                pd.last_name_1,
+                pd.last_name_2, 
+                s.group_student, 
+                u.CI_identity, 
+                directory_img
+            FROM 
+                students s
+            INNER JOIN 
+                users u ON s.id_user = u.id_user
+            INNER JOIN 
+                personal_dates pd ON pd.CI_identity = u.CI_identity
+            LEFT JOIN 
+                users_images um ON um.id_user = u.id_user;
+
+            CREATE VIEW view_info_pers_profesor AS
+            SELECT 
+                pr.id_profesor, 
+                u.id_user, 
+                pd.person_n, 
+                pd.last_name_1,
+                pd.last_name_2, 
+                n_deparment,
+                category,
+                u.CI_identity, 
+                directory_img
+            FROM 
+                profesors pr
+            INNER JOIN 
+                users u ON pr.id_user = u.id_user
+            INNER JOIN 
+                personal_dates pd ON pd.CI_identity = u.CI_identity
+            INNER JOIN 
+                deparments d ON d.id_deparment = pr.id_deparment
+            LEFT JOIN 
+                users_images um ON um.id_user = u.id_user;
+
+            CREATE VIEW view_profesor_subject AS
+            SELECT sb.id_subject, pr.id_profesor, person_n, last_name_1, last_name_2, n_subject  FROM profesors pr
+            INNER JOIN 
+                subjects sb ON sb.id_profesor = pr.id_profesor
+            INNER JOIN 
+                view_info_pers_profesor vp ON vp.id_profesor=pr.id_profesor;
+
+            CREATE VIEW view_subject_career AS
+            SELECT cy.id_career_year, s.id_subject, crr.n_career, cy.year FROM subjects s
+            INNER JOIN 
+                careers_subjects cs ON cs.id_subject = s.id_subject
+            INNER JOIN
+                careers_years cy ON cy.id_career_year = cs.id_career_year
+            INNER JOIN
+                careers crr ON crr.id_career = cy.id_career
+            ORDER BY cy.id_career_year;
+
+            CREATE VIEW view_student_career AS
+            SELECT s.id_student, s.id_user, cy.id_career_year, person_n, 
+                    last_name_1, last_name_2, CI_identity, vs.group_student, directory_img FROM students s
+            INNER JOIN
+                careers_years cy ON s.id_career_year = cy.id_career_year
+            INNER JOIN 
+                view_info_pers_student vs ON vs.id_student = s.id_student;
+
 )";
 
         PGconn *conn = PQconnectdb(connDB);

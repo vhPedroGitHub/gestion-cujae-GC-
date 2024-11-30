@@ -8,6 +8,8 @@
 #include<limits>
 #include "../menu-users/usr.h"
 
+std::string number_range(int, int);
+
 // Aqui se incluira todas las funciones y clases relacionadas con el funcionamiento del programa unido a la base de datos
 namespace GC {
 
@@ -47,6 +49,7 @@ namespace GC {
         void addCareer();
         void addSubject();
         void addImage();
+        static void addClass(const std::string, const std::string, const std::string, const std::string, const std::string);
 
         // metodos para obtener datos mediante consulta a la base de datos
         PGresult* getUserType_BD(const std::string, const std::string);

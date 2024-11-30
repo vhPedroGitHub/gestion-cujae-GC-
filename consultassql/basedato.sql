@@ -59,14 +59,9 @@ CREATE TABLE deparments (
 CREATE TABLE classes (
   id_classe SERIAL PRIMARY KEY,
   id_subject INTEGER,
-  cantidad_turnos INTEGER,
-  date_class DATE
-);
-
-CREATE TABLE assistances (
-  id_assistance SERIAL PRIMARY KEY,
-  id_classe INTEGER,
   id_student INTEGER,
+  cantidad_turnos INTEGER,
+  date_class DATE,
   assis BOOLEAN
 );
 
@@ -91,14 +86,9 @@ CREATE TABLE users_images (
   id_user INTEGER NOT NULL
 );
 
--- Agregar claves foráneas usando ALTER TABLE
-
 ALTER TABLE subjects ADD FOREIGN KEY (id_profesor) REFERENCES profesors (id_profesor);
 ALTER TABLE profesors ADD FOREIGN KEY (id_deparment) REFERENCES deparments (id_deparment);
-ALTER TABLE assistances ADD FOREIGN KEY (id_classe) REFERENCES classes (id_classe);
-ALTER TABLE assistances ADD FOREIGN KEY (id_student) REFERENCES students (id_student);
 ALTER TABLE evaluations ADD FOREIGN KEY (id_student) REFERENCES students (id_student);
-ALTER TABLE evaluations ADD FOREIGN KEY (id_subject) REFERENCES subjects (id_subject);
 ALTER TABLE profesors ADD FOREIGN KEY (id_user) REFERENCES users (id_user);
 ALTER TABLE students ADD FOREIGN KEY (id_user) REFERENCES users (id_user);
 ALTER TABLE personal_dates ADD FOREIGN KEY (CI_identity) REFERENCES users (CI_identity);
@@ -109,3 +99,5 @@ ALTER TABLE careers_subjects ADD FOREIGN KEY (id_career_year) REFERENCES careers
 ALTER TABLE students ADD FOREIGN KEY (id_career_year) REFERENCES careers_years (id_career_year);
 ALTER TABLE classes ADD FOREIGN KEY (id_subject) REFERENCES subjects (id_subject);
 ALTER TABLE users_images ADD FOREIGN KEY (id_user) REFERENCES users (id_user);
+ALTER TABLE evaluations ADD FOREIGN KEY (id_subject) REFERENCES subjects (id_subject);
+ALTER TABLE classes ADD FOREIGN KEY (id_student) REFERENCES students (id_student);

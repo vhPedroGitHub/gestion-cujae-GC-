@@ -8,17 +8,17 @@
 namespace USR {
     class User {
         private:
-            int id_user;
+            std::string id_user;
             std::string CI;
-            std::string user_name;
+            std::string user_names;
             std::string password;
-            int user_type;
+            std::string user_type;
 
         public:
-            User(const int id_user, std::string CI, std::string user_name, std::string password, int user_type);
+            User(std::string id_user, std::string CI, std::string user_name, std::string password, std::string user_type);
             ~User();
 
-            int get_id_user();
+            std::string get_id_user();
             std::string get_CI();
             std::string get_user_name();
             std::string get_password();

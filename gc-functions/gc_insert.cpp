@@ -460,5 +460,41 @@ namespace GC {
         // Limpiar resultados y cerrar conexión
         PQclear(res);
     }
+
+    void DBgc::addClass(const std::string id_subject, const std::string id_student, 
+    const std::string cantidad_turnos, const std::string date_class, const std::string assis) {
+        PGconn *conn = PQconnectdb(connDB);
+
+        if (PQstatus(conn) != CONNECTION_OK) {
+            std::cerr << "Connection to database failed: " << PQerrorMessage(conn) << std::endl;
+            PQfinish(conn);
+            return;
+        }
+
+        // Preparar la consulta SQL
+        const char *sql = "INSERT INTO classes (id_subject, id_student, cantidad_turnos, date_class, assis) VALUES ($1, $2, $3, $4, $5);";
+        
+        // Crear un objeto para almacenar el resultado
+        PGresult *res;
+
+        const char *paramValues[5]={id_subject.c_str(), id_student.c_str(), cantidad_turnos.c_str(), date_class.c_str(), assis.c_str()};
+        // Usar PQexecParams para ejecutar la consulta con parámetros
+        res = PQexecParams(conn,
+                        sql,
+                        5, 
+                        NULL, 
+                        paramValues,
+                        NULL,
+                        NULL,
+                        0); // No se necesita formato
+
+        // Verificar si la consulta fue exitosa
+        if (PQresultStatus(res) != PGRES_COMMAND_OK) {
+            std::cerr << "Error al insertar clase: " << PQerrorMessage(conn) << std::endl;
+        }
+
+        // Liberar el resultado
+        PQclear(res);
+    }
 }
 

@@ -11,7 +11,7 @@ int main (){
 
     while (true){ // en este bucle inicia la aplicacion
         if(gc_db->searchAdmin()){
-            std::string user, pass;
+            std::string user, pass, salir;
             // ---------------------- sistema de logueo ------------------------------------
             while (true) {
                 // segun el usuario digitado y su tipo de usario se desplegara el menu correspondiente
@@ -33,7 +33,7 @@ int main (){
                     std::cout << id_user << std::endl;
 
                     USR::User *user;
-                    user = new USR::User(stoi(id_user), CI, user_name, password, stoi(user_type));
+                    user = new USR::User(id_user, CI, user_name, password, user_type);
 
                     switch (stoi(user_type)) {
                         case 1:
@@ -51,6 +51,11 @@ int main (){
                             break;
                     }
 
+                    std::cout << "Digite s si quiere salir de la aplicacion -> "; std::getline(std::cin, salir);
+
+                    if (salir == "s"){
+                        break;
+                    }
                 }
             }
             // -------------------------------------------------------------------------------------------------------------------
