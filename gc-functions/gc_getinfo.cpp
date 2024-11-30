@@ -78,7 +78,7 @@ namespace GC {
         int ncolumns = PQnfields(res);
         std::string record = "";
         for (int i = 0; i < nfiles; ++i) {
-            for (int j = 0; j < ncolumns; j++){
+            for (int j = 1; j < ncolumns; j++){
                 record = record + PQgetvalue(res, i, j) + " ";
             }
             

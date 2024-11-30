@@ -2,26 +2,6 @@
 #include <vector>
 #include <limits>
 
-std::string selectElement( std::vector<GC::ConsultInd> elements) {
-    int selection = -1;
-
-    while (true) {
-        std::cout << "Seleccione un elemento del siguiente listado:\n";
-        for (size_t i = 0; i < elements.size(); ++i) {
-            std::cout << i + 1 << ". " << elements[i].getValue() << "\n";
-        }
-        
-        std::cout << "Ingrese el número del elemento seleccionado: ";
-        std::cin >> selection;
-
-        if (selection > 0 && selection <= elements.size()) {
-            return elements[selection-1].getIndice();
-        } else {
-            std::cout << "Selección inválida. Por favor, intente nuevamente.\n";
-        }
-    }
-}
-
 int getLastUserId(PGconn *conn) {
     const char *query = "SELECT MAX(id_user) FROM users";
     PGresult *res = PQexec(conn, query);
@@ -41,6 +21,26 @@ int getLastUserId(PGconn *conn) {
 }
 
 namespace GC {
+    std::string selectElement( std::vector<ConsultInd> elements) {
+        int selection = -1;
+
+        while (true) {
+            std::cout << "Seleccione un elemento del siguiente listado:\n";
+            for (size_t i = 0; i < elements.size(); ++i) {
+                std::cout << i + 1 << ". " << elements[i].getValue() << "\n";
+            }
+            
+            std::cout << "Ingrese el número del elemento seleccionado: ";
+            std::cin >> selection;
+
+            if (selection > 0 && selection <= elements.size()) {
+                return elements[selection-1].getIndice();
+            } else {
+                std::cout << "Selección inválida. Por favor, intente nuevamente.\n";
+            }
+        }
+    }
+
     void DBgc::addUser(std::string user_type) {
         std::string user_name, password_user;
         const char *paramValues[4];
@@ -425,5 +425,8 @@ namespace GC {
         PQclear(res); // Liberar el resultado
     }
 
+    void DBgc::addStudentImage(std::string directory, std::string id_student){
+        // en este metodo se le agregara una imagen a un alumno para que pueda ser identificado por una foto
+    }
 }
 

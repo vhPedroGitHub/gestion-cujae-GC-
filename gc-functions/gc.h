@@ -5,6 +5,7 @@
 #include<libpq-fe.h>
 #include<string>
 #include<vector>
+#include<limits>
 
 // Aqui se incluira todas las funciones y clases relacionadas con el funcionamiento del programa unido a la base de datos
 namespace GC {
@@ -21,6 +22,8 @@ namespace GC {
             std::string getValue();
             std::string getIndice();
     };
+
+    std::string selectElement( std::vector<ConsultInd>);
 
     class DBgc { // esta clase incluye toda la funcionalidad relacionada con las operaciones en la base de datos
     private:
@@ -40,6 +43,7 @@ namespace GC {
         void addDeparment();
         void addCareer();
         void addSubject();
+        void addStudentImage(std::string, std::string);
 
         // metodos para obtener datos mediante consulta a la base de datos
         PGresult* getUserType_BD(const std::string, const std::string);
@@ -52,6 +56,8 @@ namespace GC {
 
         // funciones de verificacion (su objetivo es revisar los registros de cada tabla)
         void verifiySubject();
+        void verifyCareersSubj();
+        void verifyStudentsCar();
     };
 
 

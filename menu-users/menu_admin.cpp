@@ -1,4 +1,5 @@
 #include "menu.h"
+#include "../gc-functions/gc.h"
 
 void submenu_add_admin(GC::DBgc *gc_db) {
     while (true) {
@@ -148,8 +149,8 @@ void submenu_verify_admin(GC::DBgc *gc_db) {
 
         // Aquí puedes agregar la lógica para cada opción
         switch (opcion) {    
-            case 1:  break;
-            case 2:  break;
+            case 1: gc_db->verifiySubject(); break;
+            case 2: gc_db->verifyCareersSubj(); break;
             case 3:  break;
             default:  break;
         }
@@ -164,7 +165,8 @@ void menu_admin(USR::User *admin, GC::DBgc *gc_db) {
         std::cout << "1- Agregar datos" << std::endl;
         std::cout << "2- Modificar datos" << std::endl;
         std::cout << "3- Eliminar datos" << std::endl;
-        std::cout << "4- Salir" << std::endl;
+        std::cout << "4- Verificar datos" << std::endl;
+        std::cout << "5- Salir" << std::endl;
         std::cout << "Elige una opción: ";
 
         int opcion;
@@ -174,7 +176,8 @@ void menu_admin(USR::User *admin, GC::DBgc *gc_db) {
             case 1: submenu_add_admin(gc_db); break;
             case 2: submenu_modify_admin(gc_db); break;
             case 3: submenu_delete_admin(gc_db); break;
-            case 4: std::cout << "Saliendo del sistema..." << std::endl; return;
+            case 4: submenu_verify_admin(gc_db); return;
+            case 5: std::cout << "Saliendo del sistema..." << std::endl; return;
             default: std::cout << "Opción no válida, intenta de nuevo." << std::endl; break;
         }
     }

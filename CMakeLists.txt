@@ -9,6 +9,7 @@ add_executable(GC
     gc-functions/gc_logic.cpp
     gc-functions/gc_getinfo.cpp
     gc-functions/consult.cpp
+    gc-functions/gc_verify.cpp
     menu-users/menu.cpp
     menu-users/menu_admin.cpp
     menu-users/usr.cpp

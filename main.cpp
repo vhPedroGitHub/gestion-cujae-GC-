@@ -17,7 +17,7 @@ int main (){
                 // segun el usuario digitado y su tipo de usario se desplegara el menu correspondiente
                 std::cout << "Digite su usuario -> "; std::getline(std::cin, user);
                 std::cout << "Digite su contrasena ->"; std::getline(std::cin, pass);
-                if (gc_db->searchUser(user, pass)){ // se verifica si el usuario exciste
+                if (gc_db->searchUser(user, pass)){ // se verifica si el usuario existe
                 
                     std::cout << "El usuario se ha encontrado con excito" << std::endl; 
                     PGresult* user_get = gc_db->getUserType_BD(user, pass); // obtenemos los dato del tipo de usuario

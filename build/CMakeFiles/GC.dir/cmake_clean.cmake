@@ -9,6 +9,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/GC.dir/gc-functions/gc_insert.cpp.obj.d"
   "CMakeFiles/GC.dir/gc-functions/gc_logic.cpp.obj"
   "CMakeFiles/GC.dir/gc-functions/gc_logic.cpp.obj.d"
+  "CMakeFiles/GC.dir/gc-functions/gc_verify.cpp.obj"
+  "CMakeFiles/GC.dir/gc-functions/gc_verify.cpp.obj.d"
   "CMakeFiles/GC.dir/main.cpp.obj"
   "CMakeFiles/GC.dir/main.cpp.obj.d"
   "CMakeFiles/GC.dir/menu-users/menu.cpp.obj"

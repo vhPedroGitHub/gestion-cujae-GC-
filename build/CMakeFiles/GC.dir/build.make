@@ -158,11 +158,26 @@ CMakeFiles/GC.dir/gc-functions/consult.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/GC.dir/gc-functions/consult.cpp.s"
 	C:\TDM-GCC-64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\HP i5-7\Documents\Pedro\ProyectoConvalidacionBasedeDatos\gestion-cujae(GC)\gc-functions\consult.cpp" -o CMakeFiles\GC.dir\gc-functions\consult.cpp.s
 
+CMakeFiles/GC.dir/gc-functions/gc_verify.cpp.obj: CMakeFiles/GC.dir/flags.make
+CMakeFiles/GC.dir/gc-functions/gc_verify.cpp.obj: CMakeFiles/GC.dir/includes_CXX.rsp
+CMakeFiles/GC.dir/gc-functions/gc_verify.cpp.obj: C:/Users/HP\ i5-7/Documents/Pedro/ProyectoConvalidacionBasedeDatos/gestion-cujae(GC)/gc-functions/gc_verify.cpp
+CMakeFiles/GC.dir/gc-functions/gc_verify.cpp.obj: CMakeFiles/GC.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\Users\HP i5-7\Documents\Pedro\ProyectoConvalidacionBasedeDatos\gestion-cujae(GC)\build\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/GC.dir/gc-functions/gc_verify.cpp.obj"
+	C:\TDM-GCC-64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/GC.dir/gc-functions/gc_verify.cpp.obj -MF CMakeFiles\GC.dir\gc-functions\gc_verify.cpp.obj.d -o CMakeFiles\GC.dir\gc-functions\gc_verify.cpp.obj -c "C:\Users\HP i5-7\Documents\Pedro\ProyectoConvalidacionBasedeDatos\gestion-cujae(GC)\gc-functions\gc_verify.cpp"
+
+CMakeFiles/GC.dir/gc-functions/gc_verify.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/GC.dir/gc-functions/gc_verify.cpp.i"
+	C:\TDM-GCC-64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\HP i5-7\Documents\Pedro\ProyectoConvalidacionBasedeDatos\gestion-cujae(GC)\gc-functions\gc_verify.cpp" > CMakeFiles\GC.dir\gc-functions\gc_verify.cpp.i
+
+CMakeFiles/GC.dir/gc-functions/gc_verify.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/GC.dir/gc-functions/gc_verify.cpp.s"
+	C:\TDM-GCC-64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\HP i5-7\Documents\Pedro\ProyectoConvalidacionBasedeDatos\gestion-cujae(GC)\gc-functions\gc_verify.cpp" -o CMakeFiles\GC.dir\gc-functions\gc_verify.cpp.s
+
 CMakeFiles/GC.dir/menu-users/menu.cpp.obj: CMakeFiles/GC.dir/flags.make
 CMakeFiles/GC.dir/menu-users/menu.cpp.obj: CMakeFiles/GC.dir/includes_CXX.rsp
 CMakeFiles/GC.dir/menu-users/menu.cpp.obj: C:/Users/HP\ i5-7/Documents/Pedro/ProyectoConvalidacionBasedeDatos/gestion-cujae(GC)/menu-users/menu.cpp
 CMakeFiles/GC.dir/menu-users/menu.cpp.obj: CMakeFiles/GC.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\Users\HP i5-7\Documents\Pedro\ProyectoConvalidacionBasedeDatos\gestion-cujae(GC)\build\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/GC.dir/menu-users/menu.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\Users\HP i5-7\Documents\Pedro\ProyectoConvalidacionBasedeDatos\gestion-cujae(GC)\build\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/GC.dir/menu-users/menu.cpp.obj"
 	C:\TDM-GCC-64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/GC.dir/menu-users/menu.cpp.obj -MF CMakeFiles\GC.dir\menu-users\menu.cpp.obj.d -o CMakeFiles\GC.dir\menu-users\menu.cpp.obj -c "C:\Users\HP i5-7\Documents\Pedro\ProyectoConvalidacionBasedeDatos\gestion-cujae(GC)\menu-users\menu.cpp"
 
 CMakeFiles/GC.dir/menu-users/menu.cpp.i: cmake_force
@@ -177,7 +192,7 @@ CMakeFiles/GC.dir/menu-users/menu_admin.cpp.obj: CMakeFiles/GC.dir/flags.make
 CMakeFiles/GC.dir/menu-users/menu_admin.cpp.obj: CMakeFiles/GC.dir/includes_CXX.rsp
 CMakeFiles/GC.dir/menu-users/menu_admin.cpp.obj: C:/Users/HP\ i5-7/Documents/Pedro/ProyectoConvalidacionBasedeDatos/gestion-cujae(GC)/menu-users/menu_admin.cpp
 CMakeFiles/GC.dir/menu-users/menu_admin.cpp.obj: CMakeFiles/GC.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\Users\HP i5-7\Documents\Pedro\ProyectoConvalidacionBasedeDatos\gestion-cujae(GC)\build\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/GC.dir/menu-users/menu_admin.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\Users\HP i5-7\Documents\Pedro\ProyectoConvalidacionBasedeDatos\gestion-cujae(GC)\build\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/GC.dir/menu-users/menu_admin.cpp.obj"
 	C:\TDM-GCC-64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/GC.dir/menu-users/menu_admin.cpp.obj -MF CMakeFiles\GC.dir\menu-users\menu_admin.cpp.obj.d -o CMakeFiles\GC.dir\menu-users\menu_admin.cpp.obj -c "C:\Users\HP i5-7\Documents\Pedro\ProyectoConvalidacionBasedeDatos\gestion-cujae(GC)\menu-users\menu_admin.cpp"
 
 CMakeFiles/GC.dir/menu-users/menu_admin.cpp.i: cmake_force
@@ -192,7 +207,7 @@ CMakeFiles/GC.dir/menu-users/usr.cpp.obj: CMakeFiles/GC.dir/flags.make
 CMakeFiles/GC.dir/menu-users/usr.cpp.obj: CMakeFiles/GC.dir/includes_CXX.rsp
 CMakeFiles/GC.dir/menu-users/usr.cpp.obj: C:/Users/HP\ i5-7/Documents/Pedro/ProyectoConvalidacionBasedeDatos/gestion-cujae(GC)/menu-users/usr.cpp
 CMakeFiles/GC.dir/menu-users/usr.cpp.obj: CMakeFiles/GC.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\Users\HP i5-7\Documents\Pedro\ProyectoConvalidacionBasedeDatos\gestion-cujae(GC)\build\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/GC.dir/menu-users/usr.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\Users\HP i5-7\Documents\Pedro\ProyectoConvalidacionBasedeDatos\gestion-cujae(GC)\build\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/GC.dir/menu-users/usr.cpp.obj"
 	C:\TDM-GCC-64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/GC.dir/menu-users/usr.cpp.obj -MF CMakeFiles\GC.dir\menu-users\usr.cpp.obj.d -o CMakeFiles\GC.dir\menu-users\usr.cpp.obj -c "C:\Users\HP i5-7\Documents\Pedro\ProyectoConvalidacionBasedeDatos\gestion-cujae(GC)\menu-users\usr.cpp"
 
 CMakeFiles/GC.dir/menu-users/usr.cpp.i: cmake_force
@@ -211,6 +226,7 @@ GC_OBJECTS = \
 "CMakeFiles/GC.dir/gc-functions/gc_logic.cpp.obj" \
 "CMakeFiles/GC.dir/gc-functions/gc_getinfo.cpp.obj" \
 "CMakeFiles/GC.dir/gc-functions/consult.cpp.obj" \
+"CMakeFiles/GC.dir/gc-functions/gc_verify.cpp.obj" \
 "CMakeFiles/GC.dir/menu-users/menu.cpp.obj" \
 "CMakeFiles/GC.dir/menu-users/menu_admin.cpp.obj" \
 "CMakeFiles/GC.dir/menu-users/usr.cpp.obj"
@@ -224,6 +240,7 @@ GC.exe: CMakeFiles/GC.dir/gc-functions/gc_insert.cpp.obj
 GC.exe: CMakeFiles/GC.dir/gc-functions/gc_logic.cpp.obj
 GC.exe: CMakeFiles/GC.dir/gc-functions/gc_getinfo.cpp.obj
 GC.exe: CMakeFiles/GC.dir/gc-functions/consult.cpp.obj
+GC.exe: CMakeFiles/GC.dir/gc-functions/gc_verify.cpp.obj
 GC.exe: CMakeFiles/GC.dir/menu-users/menu.cpp.obj
 GC.exe: CMakeFiles/GC.dir/menu-users/menu_admin.cpp.obj
 GC.exe: CMakeFiles/GC.dir/menu-users/usr.cpp.obj
@@ -232,7 +249,7 @@ GC.exe: C:/Program\ Files/PostgreSQL/14/lib/libpq.lib
 GC.exe: CMakeFiles/GC.dir/linkLibs.rsp
 GC.exe: CMakeFiles/GC.dir/objects1.rsp
 GC.exe: CMakeFiles/GC.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir="C:\Users\HP i5-7\Documents\Pedro\ProyectoConvalidacionBasedeDatos\gestion-cujae(GC)\build\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_10) "Linking CXX executable GC.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir="C:\Users\HP i5-7\Documents\Pedro\ProyectoConvalidacionBasedeDatos\gestion-cujae(GC)\build\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_11) "Linking CXX executable GC.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\GC.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

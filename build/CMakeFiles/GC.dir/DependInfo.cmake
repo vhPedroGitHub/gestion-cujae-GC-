@@ -13,6 +13,7 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "C:/Users/HP i5-7/Documents/Pedro/ProyectoConvalidacionBasedeDatos/gestion-cujae(GC)/gc-functions/gc_init.cpp" "CMakeFiles/GC.dir/gc-functions/gc_init.cpp.obj" "gcc" "CMakeFiles/GC.dir/gc-functions/gc_init.cpp.obj.d"
   "C:/Users/HP i5-7/Documents/Pedro/ProyectoConvalidacionBasedeDatos/gestion-cujae(GC)/gc-functions/gc_insert.cpp" "CMakeFiles/GC.dir/gc-functions/gc_insert.cpp.obj" "gcc" "CMakeFiles/GC.dir/gc-functions/gc_insert.cpp.obj.d"
   "C:/Users/HP i5-7/Documents/Pedro/ProyectoConvalidacionBasedeDatos/gestion-cujae(GC)/gc-functions/gc_logic.cpp" "CMakeFiles/GC.dir/gc-functions/gc_logic.cpp.obj" "gcc" "CMakeFiles/GC.dir/gc-functions/gc_logic.cpp.obj.d"
+  "C:/Users/HP i5-7/Documents/Pedro/ProyectoConvalidacionBasedeDatos/gestion-cujae(GC)/gc-functions/gc_verify.cpp" "CMakeFiles/GC.dir/gc-functions/gc_verify.cpp.obj" "gcc" "CMakeFiles/GC.dir/gc-functions/gc_verify.cpp.obj.d"
   "C:/Users/HP i5-7/Documents/Pedro/ProyectoConvalidacionBasedeDatos/gestion-cujae(GC)/main.cpp" "CMakeFiles/GC.dir/main.cpp.obj" "gcc" "CMakeFiles/GC.dir/main.cpp.obj.d"
   "C:/Users/HP i5-7/Documents/Pedro/ProyectoConvalidacionBasedeDatos/gestion-cujae(GC)/menu-users/menu.cpp" "CMakeFiles/GC.dir/menu-users/menu.cpp.obj" "gcc" "CMakeFiles/GC.dir/menu-users/menu.cpp.obj.d"
   "C:/Users/HP i5-7/Documents/Pedro/ProyectoConvalidacionBasedeDatos/gestion-cujae(GC)/menu-users/menu_admin.cpp" "CMakeFiles/GC.dir/menu-users/menu_admin.cpp.obj" "gcc" "CMakeFiles/GC.dir/menu-users/menu_admin.cpp.obj.d"

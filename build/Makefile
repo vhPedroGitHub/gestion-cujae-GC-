@@ -248,6 +248,30 @@ gc-functions/gc_logic.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\GC.dir\build.make CMakeFiles/GC.dir/gc-functions/gc_logic.cpp.s
 .PHONY : gc-functions/gc_logic.cpp.s
 
+gc-functions/gc_verify.obj: gc-functions/gc_verify.cpp.obj
+.PHONY : gc-functions/gc_verify.obj
+
+# target to build an object file
+gc-functions/gc_verify.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GC.dir\build.make CMakeFiles/GC.dir/gc-functions/gc_verify.cpp.obj
+.PHONY : gc-functions/gc_verify.cpp.obj
+
+gc-functions/gc_verify.i: gc-functions/gc_verify.cpp.i
+.PHONY : gc-functions/gc_verify.i
+
+# target to preprocess a source file
+gc-functions/gc_verify.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GC.dir\build.make CMakeFiles/GC.dir/gc-functions/gc_verify.cpp.i
+.PHONY : gc-functions/gc_verify.cpp.i
+
+gc-functions/gc_verify.s: gc-functions/gc_verify.cpp.s
+.PHONY : gc-functions/gc_verify.s
+
+# target to generate assembly for a file
+gc-functions/gc_verify.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GC.dir\build.make CMakeFiles/GC.dir/gc-functions/gc_verify.cpp.s
+.PHONY : gc-functions/gc_verify.cpp.s
+
 main.obj: main.cpp.obj
 .PHONY : main.obj
 
@@ -368,6 +392,9 @@ help:
 	@echo ... gc-functions/gc_logic.obj
 	@echo ... gc-functions/gc_logic.i
 	@echo ... gc-functions/gc_logic.s
+	@echo ... gc-functions/gc_verify.obj
+	@echo ... gc-functions/gc_verify.i
+	@echo ... gc-functions/gc_verify.s
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s
