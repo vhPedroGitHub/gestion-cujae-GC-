@@ -7,6 +7,9 @@ set(CMAKE_DEPENDS_GENERATOR "MinGW Makefiles")
 # The top level Makefile was generated from the following files:
 set(CMAKE_MAKEFILE_DEPENDS
   "CMakeCache.txt"
+  "C:/OPENCV-versions/opencv4.9/build-tdm-gcc/OpenCVConfig-version.cmake"
+  "C:/OPENCV-versions/opencv4.9/build-tdm-gcc/OpenCVConfig.cmake"
+  "C:/OPENCV-versions/opencv4.9/build-tdm-gcc/OpenCVModules.cmake"
   "C:/Program Files/CMake/share/cmake-3.29/Modules/CMakeCInformation.cmake"
   "C:/Program Files/CMake/share/cmake-3.29/Modules/CMakeCXXInformation.cmake"
   "C:/Program Files/CMake/share/cmake-3.29/Modules/CMakeCommonLanguageInclude.cmake"

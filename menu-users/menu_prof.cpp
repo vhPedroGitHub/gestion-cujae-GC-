@@ -23,7 +23,7 @@ void pasar_asistencia(GC::DBgc *gc_db, USR::User *profesor) {
         switch (sub_option) {
             case 1:
                 // Lógica para asistencia asistida por reconocimiento facial
-                std::cout << "Asistencia asistida por reconocimiento facial seleccionada.\n";
+                gc_db->opcprof_passAsistenceAuto(profesor);
                 break;
             case 2:
                 gc_db->opcprof_passAsistence(profesor);

@@ -75,4 +75,5 @@ SELECT s.id_student, s.id_user, cy.id_career_year, person_n,
 INNER JOIN
 	careers_years cy ON s.id_career_year = cy.id_career_year
 INNER JOIN 
-	view_info_pers_student vs ON vs.id_student = s.id_student;
+	view_info_pers_student vs ON vs.id_student = s.id_student
+GROUP BY s.id_student;

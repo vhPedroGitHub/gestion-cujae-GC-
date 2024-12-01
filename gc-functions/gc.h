@@ -6,6 +6,11 @@
 #include<string>
 #include<vector>
 #include<limits>
+#include<opencv2/highgui.hpp>
+#include<opencv2/dnn.hpp>
+#include<opencv2/core.hpp>
+#include<opencv2/imgproc.hpp>
+#include<opencv2/opencv.hpp>
 #include "../menu-users/usr.h"
 
 std::string number_range(int, int);
@@ -67,6 +72,8 @@ namespace GC {
 
         // operaciones realizadas por el profesor
         void opcprof_passAsistence(USR::User *);
+
+        void opcprof_passAsistenceAuto(USR::User *);
     };
 
 }

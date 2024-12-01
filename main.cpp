@@ -1,5 +1,10 @@
 #include<iostream>
 #include<libpq-fe.h>
+#include<opencv2/highgui.hpp>
+#include<opencv2/dnn.hpp>
+#include<opencv2/core.hpp>
+#include<opencv2/imgproc.hpp>
+#include<opencv2/opencv.hpp>
 
 #include "gc-functions/gc.h"
 #include "menu-users/menu.h"
@@ -15,6 +20,11 @@ int main (){
             // ---------------------- sistema de logueo ------------------------------------
             while (true) {
                 // segun el usuario digitado y su tipo de usario se desplegara el menu correspondiente
+                std::cout << "Digite s si quiere salir de la aplicacion -> "; std::getline(std::cin, salir);
+
+                if (salir == "s"){
+                    break;
+                }
                 std::cout << "Digite su usuario -> "; std::getline(std::cin, user);
                 std::cout << "Digite su contrasena ->"; std::getline(std::cin, pass);
                 if (gc_db->searchUser(user, pass)){ // se verifica si el usuario existe
@@ -50,12 +60,6 @@ int main (){
                             std::cout<< "El usuario es otra cosa" << std::endl;
                             break;
                     }
-
-                    std::cout << "Digite s si quiere salir de la aplicacion -> "; std::getline(std::cin, salir);
-
-                    if (salir == "s"){
-                        break;
-                    }
                 }
             }
             // -------------------------------------------------------------------------------------------------------------------
@@ -74,7 +78,9 @@ int main (){
             gc_db->addSubject();
             std::cout << "Es necesario agregar al menos un estudiante" << std::endl;
             gc_db->addStudent("3");
+            std::cout << "Ahora la aplicacion se cerrara vuelva a abrirla para poder operarla" << std::endl;
         }
+        break;
     }
 
     gc_db->~DBgc();

@@ -297,6 +297,20 @@ GC.exe: CMakeFiles/GC.dir/menu-users/menu_student.cpp.obj
 GC.exe: CMakeFiles/GC.dir/menu-users/usr.cpp.obj
 GC.exe: CMakeFiles/GC.dir/build.make
 GC.exe: C:/Program\ Files/PostgreSQL/14/lib/libpq.lib
+GC.exe: C:/OPENCV-versions/opencv4.9/build-tdm-gcc/lib/libopencv_highgui490.dll.a
+GC.exe: C:/OPENCV-versions/opencv4.9/build-tdm-gcc/lib/libopencv_ml490.dll.a
+GC.exe: C:/OPENCV-versions/opencv4.9/build-tdm-gcc/lib/libopencv_objdetect490.dll.a
+GC.exe: C:/OPENCV-versions/opencv4.9/build-tdm-gcc/lib/libopencv_photo490.dll.a
+GC.exe: C:/OPENCV-versions/opencv4.9/build-tdm-gcc/lib/libopencv_stitching490.dll.a
+GC.exe: C:/OPENCV-versions/opencv4.9/build-tdm-gcc/lib/libopencv_video490.dll.a
+GC.exe: C:/OPENCV-versions/opencv4.9/build-tdm-gcc/lib/libopencv_videoio490.dll.a
+GC.exe: C:/OPENCV-versions/opencv4.9/build-tdm-gcc/lib/libopencv_imgcodecs490.dll.a
+GC.exe: C:/OPENCV-versions/opencv4.9/build-tdm-gcc/lib/libopencv_calib3d490.dll.a
+GC.exe: C:/OPENCV-versions/opencv4.9/build-tdm-gcc/lib/libopencv_dnn490.dll.a
+GC.exe: C:/OPENCV-versions/opencv4.9/build-tdm-gcc/lib/libopencv_features2d490.dll.a
+GC.exe: C:/OPENCV-versions/opencv4.9/build-tdm-gcc/lib/libopencv_flann490.dll.a
+GC.exe: C:/OPENCV-versions/opencv4.9/build-tdm-gcc/lib/libopencv_imgproc490.dll.a
+GC.exe: C:/OPENCV-versions/opencv4.9/build-tdm-gcc/lib/libopencv_core490.dll.a
 GC.exe: CMakeFiles/GC.dir/linkLibs.rsp
 GC.exe: CMakeFiles/GC.dir/objects1.rsp
 GC.exe: CMakeFiles/GC.dir/link.txt

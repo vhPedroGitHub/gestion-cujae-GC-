@@ -2,6 +2,9 @@ cmake_minimum_required(VERSION 3.10)
 
 project(GC)
 
+set(CMAKE_CXX_STANDARD 11)
+set(OpenCV_DIR "C:/OPENCV-versions/opencv4.9/build-tdm-gcc")
+
 add_executable(GC 
     main.cpp 
     gc-functions/complements.cpp
@@ -20,9 +23,11 @@ add_executable(GC
 )
 
 find_package(PostgreSQL REQUIRED)
+find_package(OpenCV REQUIRED)
 
 include_directories(${PostgreSQL_INCLUDE_DIR})
 
 include_directories(${CMAKE_CURRENT_SOURCE_DIR})
 
 target_link_libraries(GC ${PostgreSQL_LIBRARIES})
+target_link_libraries(GC ${OpenCV_LIBS})
