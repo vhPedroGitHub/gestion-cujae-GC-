@@ -77,3 +77,19 @@ INNER JOIN
 INNER JOIN 
 	view_info_pers_student vs ON vs.id_student = s.id_student
 GROUP BY s.id_student;
+
+CREATE VIEW view_student_assis AS
+SELECT sw.id_student,
+    sw.id_user,
+    sw.person_n,
+    sw.last_name_1,
+    sw.last_name_2,
+    sw.group_student,
+    sw.ci_identity,
+    sw.directory_img,
+	id_subject,
+	id_classe,
+	assis,
+	cantidad_turnos
+	FROM view_info_pers_student sw
+INNER JOIN classes cl ON sw.id_student = cl.id_student

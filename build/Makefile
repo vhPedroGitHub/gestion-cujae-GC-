@@ -176,6 +176,30 @@ gc-functions/consult.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\GC.dir\build.make CMakeFiles/GC.dir/gc-functions/consult.cpp.s
 .PHONY : gc-functions/consult.cpp.s
 
+gc-functions/gc_deletes.obj: gc-functions/gc_deletes.cpp.obj
+.PHONY : gc-functions/gc_deletes.obj
+
+# target to build an object file
+gc-functions/gc_deletes.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GC.dir\build.make CMakeFiles/GC.dir/gc-functions/gc_deletes.cpp.obj
+.PHONY : gc-functions/gc_deletes.cpp.obj
+
+gc-functions/gc_deletes.i: gc-functions/gc_deletes.cpp.i
+.PHONY : gc-functions/gc_deletes.i
+
+# target to preprocess a source file
+gc-functions/gc_deletes.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GC.dir\build.make CMakeFiles/GC.dir/gc-functions/gc_deletes.cpp.i
+.PHONY : gc-functions/gc_deletes.cpp.i
+
+gc-functions/gc_deletes.s: gc-functions/gc_deletes.cpp.s
+.PHONY : gc-functions/gc_deletes.s
+
+# target to generate assembly for a file
+gc-functions/gc_deletes.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GC.dir\build.make CMakeFiles/GC.dir/gc-functions/gc_deletes.cpp.s
+.PHONY : gc-functions/gc_deletes.cpp.s
+
 gc-functions/gc_getinfo.obj: gc-functions/gc_getinfo.cpp.obj
 .PHONY : gc-functions/gc_getinfo.obj
 
@@ -295,6 +319,30 @@ gc-functions/gc_opcprof.s: gc-functions/gc_opcprof.cpp.s
 gc-functions/gc_opcprof.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\GC.dir\build.make CMakeFiles/GC.dir/gc-functions/gc_opcprof.cpp.s
 .PHONY : gc-functions/gc_opcprof.cpp.s
+
+gc-functions/gc_updates.obj: gc-functions/gc_updates.cpp.obj
+.PHONY : gc-functions/gc_updates.obj
+
+# target to build an object file
+gc-functions/gc_updates.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GC.dir\build.make CMakeFiles/GC.dir/gc-functions/gc_updates.cpp.obj
+.PHONY : gc-functions/gc_updates.cpp.obj
+
+gc-functions/gc_updates.i: gc-functions/gc_updates.cpp.i
+.PHONY : gc-functions/gc_updates.i
+
+# target to preprocess a source file
+gc-functions/gc_updates.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GC.dir\build.make CMakeFiles/GC.dir/gc-functions/gc_updates.cpp.i
+.PHONY : gc-functions/gc_updates.cpp.i
+
+gc-functions/gc_updates.s: gc-functions/gc_updates.cpp.s
+.PHONY : gc-functions/gc_updates.s
+
+# target to generate assembly for a file
+gc-functions/gc_updates.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GC.dir\build.make CMakeFiles/GC.dir/gc-functions/gc_updates.cpp.s
+.PHONY : gc-functions/gc_updates.cpp.s
 
 gc-functions/gc_verify.obj: gc-functions/gc_verify.cpp.obj
 .PHONY : gc-functions/gc_verify.obj
@@ -455,6 +503,9 @@ help:
 	@echo ... gc-functions/consult.obj
 	@echo ... gc-functions/consult.i
 	@echo ... gc-functions/consult.s
+	@echo ... gc-functions/gc_deletes.obj
+	@echo ... gc-functions/gc_deletes.i
+	@echo ... gc-functions/gc_deletes.s
 	@echo ... gc-functions/gc_getinfo.obj
 	@echo ... gc-functions/gc_getinfo.i
 	@echo ... gc-functions/gc_getinfo.s
@@ -470,6 +521,9 @@ help:
 	@echo ... gc-functions/gc_opcprof.obj
 	@echo ... gc-functions/gc_opcprof.i
 	@echo ... gc-functions/gc_opcprof.s
+	@echo ... gc-functions/gc_updates.obj
+	@echo ... gc-functions/gc_updates.i
+	@echo ... gc-functions/gc_updates.s
 	@echo ... gc-functions/gc_verify.obj
 	@echo ... gc-functions/gc_verify.i
 	@echo ... gc-functions/gc_verify.s

@@ -31,7 +31,7 @@ namespace GC {
             }
             
             std::cout << "Ingrese el número del elemento seleccionado: ";
-            std::cin >> selection;
+            selection = GC::getValidNumber();
 
             if (selection > 0 && selection <= elements.size()) {
                 return elements[selection-1].getIndice();
@@ -368,8 +368,8 @@ namespace GC {
         PQclear(res);
 
         // Insertar en la tabla careers
-        std::string insert_career_query = "INSERT INTO careers (id_faculty, n_career, duration) VALUES (" +
-                                        std::to_string(faculty_id) + ", '" + career_name + "', " + std::to_string(duration) + ") RETURNING id_career";
+        std::string insert_career_query = "INSERT INTO careers (id_faculty, n_career) VALUES (" +
+                                        std::to_string(faculty_id) + ", '" + career_name + "') RETURNING id_career";
         res = PQexec(conn_gc, insert_career_query.c_str());
         if (PQresultStatus(res) != PGRES_TUPLES_OK) {
             std::cerr << "Error inserting career: " << PQerrorMessage(conn_gc) << std::endl;
@@ -395,21 +395,24 @@ namespace GC {
 
     void DBgc::addSubject(){
         // Consulta SQL para insertar un nuevo registro en la tabla subjects
-        const char* query = "INSERT INTO subjects (id_profesor, n_subject) VALUES ($1, $2)";
+        const char* query = "INSERT INTO subjects (id_profesor, n_subject, total_turns) VALUES ($1, $2, $3)";
         
-        std::string n_subject;
+        std::string n_subject, total_turns;
 
         std::cout << "Diga el nombre de la asignatura"; std::getline(std::cin, n_subject);
+        std::cout << "Diga cuantos turnos tiene la asignatura" << std::endl;
+        total_turns = std::to_string(getValidNumber());
 
         // Parámetros para la consulta
         const char* paramValues[2];
         paramValues[0] = NULL;
         paramValues[1] = n_subject.c_str();
+        paramValues[2] = total_turns.c_str();
 
         // Ejecutar la consulta
         PGresult *res = PQexecParams(conn_gc,
                                     query,
-                                    2, 
+                                    3, 
                                     NULL, 
                                     paramValues,
                                     NULL,
@@ -496,5 +499,52 @@ namespace GC {
         // Liberar el resultado
         PQclear(res);
     }
+
+    void DBgc::addEval(std::string id_subject ,std::string id_student, std::string calification, 
+    std::string evaluation_type, std::string date_eval ){
+        PGconn *conn = PQconnectdb(connDB);
+
+        if (PQstatus(conn) != CONNECTION_OK) {
+            std::cerr << "Connection to database failed: " << PQerrorMessage(conn) << std::endl;
+            PQfinish(conn);
+            return;
+        }
+
+        // Preparar la consulta SQL
+        const char *sql = "INSERT INTO evaluations (id_student, id_subject, calification, evaluation_type, date_eval) "
+                        "VALUES ($1, $2, $3, $4, $5);";
+
+        // Crear un objeto para almacenar el resultado
+        PGresult *res;
+
+        // Preparar el comando
+        const char *paramValues[5];
+        paramValues[0] = id_student.c_str();
+        paramValues[1] = id_subject.c_str();
+        paramValues[2] = calification.c_str();
+        paramValues[3] = evaluation_type.c_str();
+        paramValues[4] = date_eval.c_str();
+
+        Oid format[5] = {23, 23, 23, 1043, 1082}; 
+        // Ejecutar la consulta
+        res = PQexecParams(conn, sql,
+                        5,
+                        format,   
+                        paramValues,
+                        NULL,   
+                        NULL,   
+                        0);       
+
+        // Verificar el resultado
+        if (PQresultStatus(res) != PGRES_COMMAND_OK) {
+            std::cerr << "Error al insertar datos: " << PQerrorMessage(conn) << std::endl;
+        } else {
+            std::cout << "Datos insertados correctamente." << std::endl;
+        }
+
+        // Liberar el resultado
+        PQclear(res);
+    }
+
 }
 

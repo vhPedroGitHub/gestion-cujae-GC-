@@ -15,7 +15,7 @@ int main (){
     GC::DBgc *gc_db = new GC::DBgc(GC::connDB); // aqui se realiza la conexion a la base de dato y otras operaciones inciales
 
     while (true){ // en este bucle inicia la aplicacion
-        if(gc_db->searchAdmin()){
+            while (GC::DBgc::searchEmptyElements(gc_db)){}
             std::string user, pass, salir;
             // ---------------------- sistema de logueo ------------------------------------
             while (true) {
@@ -62,25 +62,8 @@ int main (){
                     }
                 }
             }
+            break;
             // -------------------------------------------------------------------------------------------------------------------
-        } else {
-            std::cout << "Es necesario agregar al menos un usuario de tipo admin" << std::endl;
-            gc_db->addUser("1");
-            std::cout << "Es necesario agregar al menos una facultad" << std::endl;
-            gc_db->addFaculty();
-            std::cout << "Es necesario agregar al menos un departamento" << std::endl;
-            gc_db->addDeparment();
-            std::cout << "Es necesario agregar al menos un profesor" << std::endl;
-            gc_db->addProfessor("2");
-            std::cout << "Es necesario agregar al menos una carrera" << std::endl;
-            gc_db->addCareer();
-            std::cout << "Es necesario agregar al menos una asignatura" << std::endl;
-            gc_db->addSubject();
-            std::cout << "Es necesario agregar al menos un estudiante" << std::endl;
-            gc_db->addStudent("3");
-            std::cout << "Ahora la aplicacion se cerrara vuelva a abrirla para poder operarla" << std::endl;
-        }
-        break;
     }
 
     gc_db->~DBgc();

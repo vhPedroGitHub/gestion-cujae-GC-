@@ -15,7 +15,8 @@ CREATE TABLE profesors (
 CREATE TABLE subjects (
   id_subject SERIAL PRIMARY KEY,
   id_profesor INTEGER,
-  n_subject TEXT
+  n_subject varchar(30),
+  total_turns INTEGER NOT NULL
 );
 
 CREATE TABLE faculties (
@@ -26,8 +27,7 @@ CREATE TABLE faculties (
 CREATE TABLE careers (
   id_career SERIAL PRIMARY KEY,
   id_faculty INTEGER,
-  n_career VARCHAR(50) NOT NULL,
-  duration INTEGER NOT NULL
+  n_career VARCHAR(50) NOT NULL UNIQUE,
 );
 
 CREATE TABLE careers_years (
@@ -46,7 +46,7 @@ CREATE TABLE evaluations (
   id_evaluation SERIAL PRIMARY KEY,
   id_student INTEGER,
   id_subject INTEGER,
-  calification INTEGER,
+  calification INTEGER CHECK (calification <= 5 AND  calification >= 1),
   evaluation_type VARCHAR(10),
   date_eval DATE
 );
@@ -68,7 +68,7 @@ CREATE TABLE classes (
 CREATE TABLE users (
   id_user SERIAL PRIMARY KEY,
   CI_identity VARCHAR(11) UNIQUE,
-  user_name VARCHAR(15) NOT NULL,
+  user_name VARCHAR(15) NOT NULL UNIQUE,
   password_user VARCHAR(60) NOT NULL,
   user_type INTEGER NOT NULL
 );

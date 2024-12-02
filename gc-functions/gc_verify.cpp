@@ -82,8 +82,12 @@ namespace GC {
             for (auto career : consult){
                 std::cout << "Carrera: " << career.getValue() << std::endl;
                 while (true){
+                    std::string salida;
 
                     std::cout << "Seleccione una asignatura para esta carrera." << std::endl;
+                    std::cout << "Desea agregar asignaturas a esta carrera digite s -> "; std::getline(std::cin, salida);
+
+                    if (salida == "s"){break;} 
                     std::cout << "Las asignaturas disponibles son: " << std::endl;
                     
                     std::string id_subject = selectElement(subject);
@@ -108,11 +112,6 @@ namespace GC {
 
                     std::cin.clear(); // Clear the error flag
                     std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); // Ignore the invalid input
-
-                    std::string salida;
-                    std::cout << "Desea dejar de agregar asignaturas a esa carrera digite s -> "; std::getline(std::cin, salida);
-
-                    if (salida == "s"){break;} 
                 }
             }
             

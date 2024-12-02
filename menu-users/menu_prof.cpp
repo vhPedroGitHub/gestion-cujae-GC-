@@ -3,24 +3,22 @@
 #include "usr.h"
 
 void pasar_asistencia(GC::DBgc *gc_db, USR::User *profesor) {
-    int sub_option;
-    
+    int option;
     do {
         std::cout << "1. Asistencia Asistida por reconocimiento facial\n";
         std::cout << "2. Asistencia Manual\n";
         std::cout << "3. Volver al menú principal\n";
-        std::cout << "Seleccione una opción: ";
-        
-        std::cin >> sub_option;
+        std::cout << "Elige una opción" << std::endl;
+
+        option = GC::getValidNumber();
 
         // Validar entrada
-        while (std::cin.fail() || sub_option < 1 || sub_option > 3) {
-            GC::clearBufferCin();
-            std::cout << "Opción no válida. Por favor, seleccione nuevamente: ";
-            std::cin >> sub_option;
+        while (std::cin.fail() || option < 1 || option > 3) {
+            std::cout << "Elige una opción" << std::endl;
+            option = GC::getValidNumber();
         }
 
-        switch (sub_option) {
+        switch (option) {
             case 1:
                 // Lógica para asistencia asistida por reconocimiento facial
                 gc_db->opcprof_passAsistenceAuto(profesor);
@@ -32,7 +30,7 @@ void pasar_asistencia(GC::DBgc *gc_db, USR::User *profesor) {
                 // Volver al menú principal
                 break;
         }
-    } while (sub_option != 3);
+    } while (option != 3);
 }
 
 void menu_profesor(USR::User *profesor, GC::DBgc *gc_db) {
@@ -42,19 +40,11 @@ void menu_profesor(USR::User *profesor, GC::DBgc *gc_db) {
         std::cout << "----- Menú del Profesor -----\n";
         std::cout << "1. Pasar Asistencia\n";
         std::cout << "2. Registrar Evaluaciones\n";
-        std::cout << "3. Ver alumnos invalidados por inasistencia\n";
-        std::cout << "4. Ver evaluaciones de los alumnos\n";
-        std::cout << "5. Salir\n";
-        std::cout << "Seleccione una opción: ";
-        
-        std::cin >> option;
+        std::cout << "3. Ver asistencia de los estudiantes\n";
+        std::cout << "4. Salir\n";
+        std::cout << "Elige una opción" << std::endl;
 
-        // Validar entrada
-        while (std::cin.fail() || option < 1 || option > 5) {
-            GC::clearBufferCin();
-            std::cout << "Opción no válida. Por favor, seleccione nuevamente: ";
-            std::cin >> option;
-        }
+        option = GC::getValidNumber();
 
         switch (option) {
             case 1:
@@ -63,24 +53,17 @@ void menu_profesor(USR::User *profesor, GC::DBgc *gc_db) {
 
             case 2:
                 // Lógica para registrar evaluaciones
-                std::cout << "Registrar evaluaciones seleccionada.\n";
+                gc_db->opcprof_addEval(profesor);
                 break;
 
             case 3:
-                // Lógica para ver alumnos invalidados por inasistencia
-                std::cout << "Ver alumnos invalidados por inasistencia seleccionada.\n";
-                break;
-
-            case 4:
-                // Lógica para ver evaluaciones de los alumnos
-                std::cout << "Ver evaluaciones de los alumnos seleccionada.\n";
-                break;
-
-            case 5:
                 // Salir del menú
-                std::cout << "Saliendo del menú...\n";
+                gc_db->opcprof_seeAssis(profesor);
+                break;
+            case 4:
+                std::cout << "Saliendo del menu ...." << std::endl;
                 break;
         }
 
-    } while (option != 5);
+    } while (option != 4);
 }

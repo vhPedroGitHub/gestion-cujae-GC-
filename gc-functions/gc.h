@@ -34,6 +34,7 @@ namespace GC {
     std::string selectElement( std::vector<ConsultInd>);
 
     void clearBufferCin();
+    int getValidNumber();
 
     class DBgc { // esta clase incluye toda la funcionalidad relacionada con las operaciones en la base de datos
     private:
@@ -55,6 +56,13 @@ namespace GC {
         void addSubject();
         void addImage();
         static void addClass(const std::string, const std::string, const std::string, const std::string, const std::string);
+        static void addEval(std::string, std::string, std::string, std::string, std::string);
+
+        // metodos para insertar datos
+        void updateStudent();
+
+        // deletes
+        void deleteStudent();
 
         // metodos para obtener datos mediante consulta a la base de datos
         PGresult* getUserType_BD(const std::string, const std::string);
@@ -62,7 +70,7 @@ namespace GC {
         static std::vector<ConsultInd> getInfosALL(const std::string&);
 
         // metodos logicos con la base de datos
-        bool searchAdmin();
+        static bool searchEmptyElements(DBgc *);
         bool searchUser(const std::string, const std::string);
 
         // funciones de verificacion (su objetivo es revisar los registros de cada tabla)
@@ -72,8 +80,9 @@ namespace GC {
 
         // operaciones realizadas por el profesor
         void opcprof_passAsistence(USR::User *);
-
         void opcprof_passAsistenceAuto(USR::User *);
+        void opcprof_addEval(USR::User *);
+        void opcprof_seeAssis(USR::User *);
     };
 
 }

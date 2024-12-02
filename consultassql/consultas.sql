@@ -39,3 +39,14 @@ INNER JOIN subjects s ON pr.id_profesor=s.id_profesor;
 
 SELECT u.id_user FROM users u 
 INNER JOIN profesors pr ON pr.id_user=u.id_user
+
+SELECT DISTINCT ON(date_class) SUM(cantidad_turnos)AS total_turns 
+FROM view_student_assis
+GROUP BY id_subject, date_class
+LIMIT 1
+;
+
+SELECT SUM(cantidad_turnos) AS asistencia FROM view_student_assis
+WHERE id_student = 1 AND id_subject = 1 AND assis
+GROUP BY assis
+;

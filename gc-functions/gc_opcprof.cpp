@@ -70,10 +70,6 @@ namespace GC {
     void DBgc::opcprof_passAsistence(USR::User *profesor){
 
         std::string date = getDates(), entry;
-        
-        // a partir de aqui ya se obtuvieron los estudiantes del grupo al cual se le pasara la asistencia.
-        // por cada estudiante le mostraremos el nombre en pantalla al profesor y el simplemente escribira
-        // s si fue el estudiante o n si no fue. Asi hasta que termine la operacion
 
         // primero obtenemos el id del profesor correspondiente al usuario logueado
         std::string query = "SELECT u.id_user, ('anonimo') aux FROM users u INNER JOIN profesors pr ON pr.id_user = " + profesor->get_id_user() + ";";
@@ -86,6 +82,10 @@ namespace GC {
         query = "SELECT * FROM view_profesor_subject WHERE id_profesor = " + id_profesor + ";";
         consult = GC::DBgc::getInfosALL(query);
 
+        if(consult.size() == 0){
+            std::cout << "Debe impartir una asignatura para poder pasar asistencia" << std::endl;
+            return; 
+        }
         std::cout << "Diga en que asignatura desea pasar la asistencia" << std::endl;
         std::string id_subject = GC::selectElement(consult);
         GC::clearBufferCin();
@@ -165,6 +165,10 @@ namespace GC {
         query = "SELECT * FROM view_profesor_subject WHERE id_profesor = " + id_profesor + ";";
         consult = GC::DBgc::getInfosALL(query);
 
+        if(consult.size() == 0){
+            std::cout << "Debe impartir una asignatura para poder pasar asistencia" << std::endl;
+            return; 
+        }
         std::cout << "Diga en que asignatura desea pasar la asistencia" << std::endl;
         std::string id_subject = GC::selectElement(consult);
         GC::clearBufferCin();
@@ -332,4 +336,142 @@ namespace GC {
         }
     }
 
+    void DBgc::opcprof_addEval(USR::User *profesor){
+        std::string date = getDates(), entry;
+        
+        // a partir de aqui ya se obtuvieron los estudiantes del grupo al cual se le pasara la asistencia.
+        // por cada estudiante le mostraremos el nombre en pantalla al profesor y el simplemente escribira
+        // s si fue el estudiante o n si no fue. Asi hasta que termine la operacion
+
+        // primero obtenemos el id del profesor correspondiente al usuario logueado
+        std::string query = "SELECT u.id_user, ('anonimo') aux FROM users u INNER JOIN profesors pr ON pr.id_user = " + profesor->get_id_user() + ";";
+        std::vector<GC::ConsultInd> consult = GC::DBgc::getInfosALL(query);
+        
+        std::string id_profesor = consult[0].getIndice();
+        std::cout << "El id del profesor es " << id_profesor << std::endl;
+        // obtenemos que asignaturas da el profesor y lo hacemos que elija
+
+        query = "SELECT * FROM view_profesor_subject WHERE id_profesor = " + id_profesor + ";";
+        consult = GC::DBgc::getInfosALL(query);
+
+        if(consult.size() == 0){
+            std::cout << "Debe impartir una asignatura para poder pasar asistencia" << std::endl;
+            return; 
+        }
+        std::cout << "Diga en que asignatura desea pasar la asistencia" << std::endl;
+        std::string id_subject = GC::selectElement(consult);
+        GC::clearBufferCin();
+
+        // despues en que carrera desea pasar la asistencia, si se da el caso de que imparte la asignatura en varias carreras
+        query = "SELECT * FROM view_subject_career WHERE id_subject = " + id_subject + ";";
+        consult = GC::DBgc::getInfosALL(query);
+
+        std::cout << "Se detecto que imparte esa asignatura en estas carreras, debe seleccionar una" << std::endl;
+        std::string id_career_year = selectElement(consult);
+        GC::clearBufferCin();
+
+        // elige uno de los grupos de esa carrera 
+        PGresult *res = PQexec(conn_gc, ("SELECT MAX(group_student) FROM view_student_career WHERE id_career_year = " + id_career_year + ";").c_str());
+        
+        if (PQresultStatus(res) != PGRES_TUPLES_OK) {
+            std::cerr << "Error" << PQerrorMessage(conn_gc) << std::endl;
+            PQclear(res);
+        }
+
+        std::string groups = PQgetvalue(res, 0, 0);
+        std::cout << "Hay un total de " << groups << " grupos. Digite un numero que se encuentre en el rango de los grupos" << std::endl;
+
+        std::string group = number_range(1, std::stoi(groups));
+
+        // obtenemos los estudiantes 
+        const char *paramValues[2]={id_career_year.c_str(), group.c_str()};
+        res = PQexecParams(conn_gc, R"(SELECT DISTINCT ON (id_student) id_student, id_user, id_career_year, person_n, 
+		                            last_name_1, last_name_2, CI_identity, group_student, directory_img FROM view_student_career 
+                                            WHERE id_career_year = $1 AND group_student = $2;)", 
+                                            2, NULL, paramValues, NULL, NULL, 0);
+        
+        if (PQresultStatus(res) != PGRES_TUPLES_OK) {
+            std::cerr << "Error" << PQerrorMessage(conn_gc) << std::endl;
+            PQclear(res);
+        }
+
+        int studentsNfields = PQntuples(res);
+        int studentsNfcolumns = PQnfields(res);
+        std::cout << "Hay un total de " << studentsNfields << " estudiantes" << std::endl;
+        clearBufferCin();
+        std::string type_eval;
+        std::cout << "Digite el tipo de evaluacion que realizo -> "; std::getline(std::cin, type_eval);
+
+        for (int i = 0; i < studentsNfields; i++) {
+            std::string calification;
+            std::cout << "El estudiante: " << PQgetvalue(res, i, 3) << " " << PQgetvalue(res, i, 4) << " " << PQgetvalue(res, i, 5) << std::endl;
+
+            std::cout << "Digite la clasificacion del estudiante" << std::endl;
+
+            calification = std::to_string(GC::getValidNumber());
+            
+            DBgc::addEval(id_subject, PQgetvalue(res, i, 0), calification, 
+                type_eval, date);
+        }
+
+        PQclear(res);
+    }   
+
+    void DBgc::opcprof_seeAssis(USR::User *profesor){
+        // primero obtenemos el id del profesor correspondiente al usuario logueado
+        std::string query = "SELECT u.id_user, ('anonimo') aux FROM users u INNER JOIN profesors pr ON pr.id_user = " + profesor->get_id_user() + ";";
+        std::vector<GC::ConsultInd> consult = GC::DBgc::getInfosALL(query);
+        
+        std::string id_profesor = consult[0].getIndice();
+        std::cout << "El id del profesor es " << id_profesor << std::endl;
+
+        query = "SELECT * FROM view_profesor_subject WHERE id_profesor = " + id_profesor + ";";
+        consult = GC::DBgc::getInfosALL(query);
+
+        if(consult.size() == 0){
+            std::cout << "Debe impartir una asignatura para poder pasar asistencia" << std::endl;
+            return; 
+        }
+
+        std::cout << "Diga en que asignatura desea ver la asistencia" << std::endl;
+        std::string id_subject = GC::selectElement(consult);
+        GC::clearBufferCin();
+        
+        query = R"(SELECT SUM(ct) FROM (
+                    SELECT DISTINCT ON(date_class) SUM(cantidad_turnos) AS ct FROM classes
+                    WHERE id_subject = $1
+                    GROUP BY id_classe
+                ) AS cttable;)";
+
+        const char *paramValue_1[1] = {id_subject.c_str()};
+        PGresult *res = PQexecParams(conn_gc, query.c_str(), 1, NULL, paramValue_1, NULL, NULL, 0);
+
+        std::string numero_turnos = PQgetvalue(res, 0, 0);
+
+        query = R"(SELECT DISTINCT ON (id_student) * FROM view_student_assis WHERE id_subject = $1;)";
+        PGresult *res_2 = PQexecParams(conn_gc, query.c_str(), 1, NULL, paramValue_1, NULL, NULL, 0);
+
+        query = R"(SELECT total_turns FROM subjects WHERE id_subject = $1;)";
+        PGresult *res_4 = PQexecParams(conn_gc, query.c_str(), 1, NULL, paramValue_1, NULL, NULL, 0);
+
+        std::string total_turnos = PQgetvalue(res_4, 0, 0);
+
+        query = R"(SELECT SUM(cantidad_turnos) AS asistencia FROM view_student_assis WHERE id_student = $1 AND id_subject = $2 AND assis GROUP BY assis;)";
+        for (int i = 0; i < PQntuples(res_2); i++){
+            const char *paramValue_2[2] = {PQgetvalue(res_2, i, 0) ,id_subject.c_str()};
+            PGresult *res_3 = PQexecParams(conn_gc, query.c_str(), 2, NULL, paramValue_2, NULL, NULL, 0);
+
+            std::cout << "Estudiante: " << PQgetvalue(res_2, i, 2) << " " << PQgetvalue(res_2, i, 3) << " " << PQgetvalue(res_2, i, 4) << std::endl;
+            std::cout << "Asistencia " << PQgetvalue(res_3, 0, 0) << "/" << numero_turnos << " total de turnos -- " << total_turnos << std::endl;
+
+            float asistencias_student = std::stof(PQgetvalue(res_3, 0, 0));
+            float total_turn = std::stof(numero_turnos); 
+
+            std::cout << "Porcentaje de asistencia " << (asistencias_student / total_turn) * 100 << "%" << std::endl;
+            std::cout << "\n";
+        }
+        
+        PQclear(res_2);
+        PQclear(res);        
+    }
 }
